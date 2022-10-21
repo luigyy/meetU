@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0px;
+  /* border: 1px red solid; */
+}
+
+.form > p {
+  padding-top: 10px;
+  color: white;
+}
+
+.form > input {
+  border-radius: 5px;
+  border: 1px black solid;
+}
