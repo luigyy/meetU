@@ -40,16 +40,16 @@ const Landing = () => {
             Iniciar sesión
           </button>
         </div>
-        <div className="md:w-1/2 md:h-1/2 mt-32 bg-gray-200 shadow-2xl rounded-3xl bg-[rgb(0,0,0,0.4)]">
+        <div className="md:min-w-1/2 md:h-1/2 mt-32 bg-gradient-to-r from-[rgb(0,0,0,0.5)] to-[rgb(0,0,0,.1)] shadow-2xl rounded-3xl">
           {/** header */}
           <div className="p-10 font-extrabold text-white ">
-            <h1 className="text-8xl tracking-tighter">
+            <h1 className="transition-all duration-1000 text-6xl md:text-8xl tracking-tighter">
               Tinder<span className="text-blue-400">UCR </span>
             </h1>
             <h3 className="text-2xl pl-4">
               La app de citas hecha exclusivamente para estudiantes UCR 🌻
             </h3>
-            <p className="italic font-light pt-5 pl-4">
+            <p className="italic font-light pt-5 pl-4 ">
               {" "}
               Registrate con tu correo institucional y conecta con la comunidad{" "}
               <span className="font-semibold text-blue-400">UCR </span> !
