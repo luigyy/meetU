@@ -3,7 +3,7 @@ import "./index.css";
 import Navbar from "./components/Navbar";
 import Main from "./pages/Main";
 import Interaction from "./components/Interaction";
-import Landing from "./pages/Landing";
+import Hero from "./pages/Hero";
 
 function App() {
   const LOGGED = false;
@@ -16,7 +16,7 @@ function App() {
           <Interaction />
         </>
       ) : (
-        <Landing />
+        <Hero />
       )}
     </div>
   );

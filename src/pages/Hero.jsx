@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Register from "../components/Register";
 import Login from "../components/Login";
 
-const Landing = () => {
+const Hero = () => {
   // style in tailwind for register and login buttons
   const [registerState, setRegisterState] = useState(false);
   const [loginState, setLoginState] = useState(false);
@@ -43,16 +43,20 @@ const Landing = () => {
         <div className="md:min-w-1/2 md:h-1/2 mt-32 bg-gradient-to-r from-[rgb(0,0,0,0.5)] to-[rgb(0,0,0,.1)] shadow-2xl rounded-3xl">
           {/** header */}
           <div className="p-10 font-extrabold text-white ">
-            <h1 className="transition-all duration-1000 text-6xl md:text-8xl tracking-tighter">
-              Tinder<span className="text-blue-400">UCR </span>
+            <h1 className="pl-2 transition-all duration-1000 text-6xl md:text-8xl tracking-tighter">
+              Meet<span className="text-blue-400">U </span>{" "}
+              <span
+                className={`transition-all duration-1000  ${
+                  registerState || loginState ? "" : "opacity-0"
+                }`}
+              ></span>
             </h1>
             <h3 className="text-2xl pl-4">
-              La app de citas hecha exclusivamente para estudiantes UCR 🌻
+              La app de citas para estudiantes universitarios de Costa Rica 🔥
             </h3>
             <p className="italic font-light pt-5 pl-4 ">
               {" "}
-              Registrate con tu correo institucional y conecta con la comunidad{" "}
-              <span className="font-semibold text-blue-400">UCR </span> !
+              Registrate con tu correo institucional y conecta con la comunidad!{" "}
             </p>
           </div>
         </div>
@@ -68,4 +72,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Hero;
