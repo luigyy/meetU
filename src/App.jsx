@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Main from "./pages/Main";
 import Interaction from "./components/Interaction";
 import Hero from "./pages/Hero";
+import Landing from "./pages/Landing";
 
 function App() {
   const LOGGED = false;
@@ -16,7 +17,7 @@ function App() {
           <Interaction />
         </>
       ) : (
-        <Hero />
+        <Landing />
       )}
     </div>
   );

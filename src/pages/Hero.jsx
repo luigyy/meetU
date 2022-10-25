@@ -2,12 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Register from "../components/Register";
 import Login from "../components/Login";
+import "../Hero.css";
 
 const Hero = () => {
   // style in tailwind for register and login buttons
   const [registerState, setRegisterState] = useState(false);
   const [loginState, setLoginState] = useState(false);
-  //
+
   //toggle between login and register forms
   useEffect(() => {
     setLoginState(registerState ? false : loginState);
@@ -21,7 +22,7 @@ const Hero = () => {
     "font-semibold  p-3 px-4 rounded-3xl hover:bg-[rgb(0,0,0,.5)]";
   return (
     <div className="mb-4">
-      <div className="overflow-hidden h-screen bg-[url('./images/UCR_Generales.jpg')] bg-cover bg-no-repeat bg-center">
+      <div className="overflow-hidden md:h-screen changeBg bg-cover bg-no-repeat bg-center">
         <div className="text-white flex justify-center bg-[rgb(0,0,0,.4)] py-5 space-x-9">
           <button
             onClick={(e) => setRegisterState(!registerState)}
@@ -52,7 +53,7 @@ const Hero = () => {
               ></span>
             </h1>
             <h3 className="text-2xl pl-4">
-              La app de citas para estudiantes universitarios de Costa Rica 🔥
+              {/* La app de citas para estudiantes universitarios de Costa Rica 🔥 */}
             </h3>
             <p className="italic font-light pt-5 pl-4 ">
               {" "}
@@ -61,10 +62,10 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="md:w-[40%]  md:min-h-1/2 p-10 relative bottom-[400px] ml-auto rounded-3xl ">
+        <div className="md:w-[40%]  md:min-h-1/2 p-10 md:relative md:bottom-[400px] md:ml-auto w-2/3 mx-auto md:m-0 rounded-3xl ">
           <Login loginState={loginState} />
         </div>
-        <div className="md:w-[40%]  md:min-h-1/2 p-10 relative bottom-[550px] ml-auto rounded-3xl ">
+        <div className="md:w-[40%]  md:min-h-1/2 p-10 md:relative md:bottom-[550px] md:ml-auto w-2/3 mx-auto md:m-0 rounded-3xl ">
           <Register registerState={registerState} />
         </div>
       </div>

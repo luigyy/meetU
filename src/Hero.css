@@ -1,0 +1,22 @@
+.changeBg {
+  animation: change 20s infinite ease-in-out;
+  background-image: url("./images/UCR_Generales.jpg");
+}
+
+@keyframes change {
+  0% {
+    background-image: url("./images/UCR_Generales.jpg");
+  }
+  25% {
+    background-image: url("./images/tec.jpg");
+  }
+  50% {
+    background-image: url("./images/uveritas.jpg");
+  }
+  75% {
+    background-image: url("./images/ufidelitas.jpg");
+  }
+  100% {
+    background-image: url("./images/ulatina.jpg");
+  }
+}

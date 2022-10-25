@@ -119,7 +119,6 @@ const Register = ({ registerState }) => {
             type="text"
             placeholder="Email"
           />
-          <p className="text-sm text-gray-500 "> *@ucr.ac.cr</p>
         </div>
         <div class="mb-6">
           <label
