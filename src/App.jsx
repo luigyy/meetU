@@ -7,14 +7,13 @@ import Hero from "./pages/Hero";
 import Landing from "./pages/Landing";
 
 function App() {
-  const LOGGED = false;
+  const LOGGED = true;
   return (
     <div className="">
       {LOGGED ? (
         <>
           <Navbar />
           <Main />
-          <Interaction />
         </>
       ) : (
         <Landing />

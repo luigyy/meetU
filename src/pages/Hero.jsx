@@ -41,7 +41,7 @@ const Hero = () => {
             Iniciar sesión
           </button>
         </div>
-        <div className="md:min-w-1/2 md:h-1/2 mt-32 bg-gradient-to-r from-[rgb(0,0,0,0.5)] to-[rgb(0,0,0,.1)] shadow-2xl rounded-3xl">
+        <div className="md:min-w-1/2 md:h-1/2 mt-10 md:mt-32 bg-gradient-to-r from-[rgb(0,0,0,0.5)] to-[rgb(0,0,0,.1)] shadow-2xl rounded-3xl">
           {/** header */}
           <div className="p-10 font-extrabold text-white ">
             <h1 className="pl-2 transition-all duration-1000 text-6xl md:text-8xl tracking-tighter">
