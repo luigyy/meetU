@@ -5,6 +5,8 @@ import Main from "./pages/Main";
 import Interaction from "./components/Interaction";
 import Hero from "./pages/Hero";
 import Landing from "./pages/Landing";
+import Settings from "./pages/navbar/Settings";
+import Chats from "./pages/navbar/Chats";
 
 function App() {
   const LOGGED = true;
@@ -12,8 +14,7 @@ function App() {
     <div className="">
       {LOGGED ? (
         <>
-          <Navbar />
-          <Main />
+          <Chats />
         </>
       ) : (
         <Landing />

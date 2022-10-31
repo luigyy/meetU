@@ -18,7 +18,7 @@ const InteractionButton = ({ title, style, icon, bgOnHover, tooltip }) => {
       >
         {icon}
       </button>
-      {/** test */}
+      {/** tooltip */}
       <ReactTooltip id={title}>
         <span>{title}</span>
       </ReactTooltip>
