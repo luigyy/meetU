@@ -21,7 +21,7 @@ const Settings = () => {
     <div>
       <HeaderForNavbarButtons title="Settings" />
       <SettingsButton title="Edit Profile" />
-      <SettingsButton title="Edit Profile" />
+      <SettingsButton title="About " />
     </div>
   );
 };
