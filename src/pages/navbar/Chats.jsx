@@ -32,7 +32,8 @@ const chatSample = [
 const Chats = () => {
   return (
     //TODO: make profile section a button
-    <div>
+    //TODO: order messages by activity
+    <div className="">
       <HeaderForNavbarButtons title="Chats" />
       {chatSample.map((item, index) => (
         <div className="flex items-center hover:bg-gray-100 ">
@@ -46,10 +47,13 @@ const Chats = () => {
             <h1 className="">{item.name}</h1>
           </div>
           {/* message section  */}
-          {/**TODO: make sure lastMessage has a max length  */}
           <div className="w-3/4 h-[100px] mr-4 pt-5  ">
             {/**message box */}
-            <div className=" h-3/4">
+            <div
+              className={`text-gray-700  h-3/4 ${
+                item.alreadyRead ? "" : "font-semibold text-lg"
+              }`}
+            >
               {/**if string if bigger than 75 chars, chop it so it can fit into the box */}
               {item.lastMessage.length > 75
                 ? item.lastMessage.substring(0, 75) + "..."
@@ -57,8 +61,12 @@ const Chats = () => {
             </div>
 
             {/**date box */}
-            <div className="absolute right-4 text-xs text-gray-600">
-              {item.dateLastMessage}
+            <div
+              className={`absolute right-4 text-xs text-gray-600 ${
+                item.alreadyRead ? "" : "font-semibold text-green-500"
+              }`}
+            >
+              {item.alreadyRead ? item.dateLastMessage : "New message"}
             </div>
           </div>
         </div>

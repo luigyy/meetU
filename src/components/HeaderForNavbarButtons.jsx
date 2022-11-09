@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 const HeaderForNavbarButtons = ({ title, customFunc }) => {
   return (
     <div className="pb-5">
-      <Link to="/settings">
-        >
+      <Link to="/">
         <button className="hover:bg-gray-50 rounded-3xl fixed text-3xl p-3 md:ml-44 top-4">
           <AiOutlineArrowLeft />
         </button>
