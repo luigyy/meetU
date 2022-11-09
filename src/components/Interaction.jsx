@@ -27,7 +27,7 @@ const InteractionButton = ({ title, style, icon, bgOnHover, tooltip }) => {
 
 const Interaction = () => {
   return (
-    <div className="flex justify-evenly  w-full fixed top-[550px]  ">
+    <div className="flex justify-evenly  w-full fixed top-[520px]  ">
       <InteractionButton title="Backward" icon={<BsArrowReturnLeft />} />
       <InteractionButton title="Like" icon={<FcLike />} bgOnHover="red" />
       <InteractionButton title="Pass" icon={<FcDislike />} />

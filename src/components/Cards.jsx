@@ -10,7 +10,7 @@ const Cards = ({ people }) => {
           <TinderCard
             key={index}
             className="absolute pressable"
-            preventSwipe={["up", "down"]}
+            preventSwipe={["up", "down", "right", "left"]}
           >
             <div
               className="relative w-[270px] md:w-[500px] max-w-full h-96 bg-no-repeat rounded-3xl mx-auto bg-cover shadow-2xl "
