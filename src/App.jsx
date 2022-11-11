@@ -12,8 +12,7 @@ import PublicRoutes from "./components/PublicRoutes";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  //temp
-  //TODO: make not found component
+  //see ./routes.js for routes
   const LOGGED = true;
   return (
     <Router>

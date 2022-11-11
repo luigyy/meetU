@@ -36,7 +36,7 @@ const Chats = () => {
     <div className="">
       <HeaderForNavbarButtons title="Chats" />
       {chatSample.map((item, index) => (
-        <div key={index} className="flex items-center hover:bg-gray-100 ">
+        <div key={index} className="flex items-center hover:bg-gray-200 ">
           {/* pic section  */}
           <div className="p-5 w-1/4 min-h-[50px]  flex-col">
             <img
