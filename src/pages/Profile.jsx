@@ -94,8 +94,8 @@ const Profile = () => {
       </div>
 
       {/* second section  */}
-      <div className=" h-[220vh] md:h-screen border-4 bg-gray-300 md:flex">
-        <div className="w-full h-screen">
+      <div className=" h-[200vh] md:h-screen border-4  md:flex">
+        <div className="w-full min-h-screen bg-gray-300">
           <div className="p-20">
             <h1 className="py-5 font-semibold text-3xl text-center">
               Sobre mi
@@ -119,11 +119,35 @@ const Profile = () => {
             </p>
           </div>
         </div>
-        <div className="w-full h-screen"></div>
+        <div className="w-full h-screen bg- md:bg-gray-300 pt-28">
+          {/* pasatiemps */}
+          <div class="card w-96 bg-base-100 shadow-xl mx-auto  ">
+            <div class="card-body">
+              <h2 class="card-title"> Hobbies...</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint,
+                nostrum?
+              </p>
+            </div>
+          </div>
+          {/* cita idea  */}
+          <div class="card w-96 bg-base-100 shadow-xl mx-auto m-10 mt-20 ">
+            <div class="card-body">
+              <h2 class="card-title">Idea para una primera cita 👀</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum,
+                sint!
+              </p>
+            </div>
+          </div>
+          {/* cita idea  */}
+        </div>
       </div>
 
-      {/* ? album de fotos, redes sociales ? */}
-      <div className="h-screen  m-5 mb-20 border-4   border-orange-500 mx-auto"></div>
+      {/* redes sociales ? , delete?*/}
+      <div className="h-screen  m-5 mb-20 border-4 border-orange-500 mx-auto">
+        {" "}
+      </div>
     </div>
   );
 };
