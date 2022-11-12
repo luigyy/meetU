@@ -2,3 +2,9 @@
   background-color: #d1d2db;
   background-image: linear-gradient(62deg, #d1d2db 33%, #ffffff 100%);
 }
+
+.blur-bg {
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}

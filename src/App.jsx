@@ -10,9 +10,10 @@ import { protectedRoutes, publicRoutes } from "./routes";
 import PrivateRoutes from "./components/PrivateRoutes";
 import PublicRoutes from "./components/PublicRoutes";
 import NotFound from "./pages/NotFound";
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 function App() {
-  //see ./routes.js for routes
   const LOGGED = true;
   return (
     <Router>
@@ -21,6 +22,7 @@ function App() {
         {publicRoutes.map((route) => (
           <Route
             path={route.path}
+            key={route.path}
             element={
               <PublicRoutes logged={LOGGED}>{route.component}</PublicRoutes>
             }
@@ -32,10 +34,10 @@ function App() {
         {protectedRoutes.map((route) => (
           <Route
             path={route.path}
+            key={route.path}
             element={
               <PrivateRoutes logged={LOGGED}>{route.component}</PrivateRoutes>
             }
-            key={route.path}
           />
         ))}
         {/**protected routes */}

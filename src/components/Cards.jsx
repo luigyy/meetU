@@ -1,8 +1,12 @@
 import React from "react";
 import TinderCard from "react-tinder-card";
 import { Link } from "react-router-dom";
+import Interaction from "./Interaction";
+import { useStateContext } from "../contexts/ContextProvider";
 
-const Cards = ({ people }) => {
+const Cards = ({}) => {
+  const { people } = useStateContext();
+
   return (
     <div>
       <div className="flex justify-center">
@@ -21,14 +25,15 @@ const Cards = ({ people }) => {
                 <span className="text-lg">, {item.age}</span>
               </span>
               <Link to="/profile" state={{ person: item }}>
-                <span className=" p-4 absolute italic text-white bottom-2 right-2 ">
+                <button className=" p-4 absolute italic text-white bottom-2 right-2 ">
                   See Profile
-                </span>
+                </button>
               </Link>
             </div>
           </TinderCard>
         ))}
       </div>
+      <Interaction />
     </div>
   );
 };
