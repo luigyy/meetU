@@ -16,7 +16,7 @@ const Navbutton = ({ icon, path }) => {
 };
 const Navbar = () => {
   return (
-    <div className="flex justify-around md:justify-evenly bg-gray-200 mb-4 items-center ">
+    <div className="flex justify-around md:justify-evenly bg-gray-200 mb-4 ">
       <Navbutton icon={<FiSettings />} path="/settings" />
       {/**MeetU */}
       <button className="text-3xl font-extrabold -tracking-widest hover:bg-blue-50 rounded-3xl mb-2 p-5">
