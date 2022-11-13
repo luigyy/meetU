@@ -4,20 +4,23 @@ import { FcDislike } from "react-icons/fc";
 import { BsArrowReturnLeft, BsArrowReturnRight } from "react-icons/bs";
 import ReactTooltip from "react-tooltip";
 import { CgHome, CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 //======================
-const InteractionButton = ({ title, icon, bgOnHover }) => {
+const InteractionButton = ({ title, icon, bgOnHover, path }) => {
   return (
     <>
-      <button
-        data-tip
-        data-for={title}
-        className={`rounded-3xl p-5 text-3xl md:text-4xl ${
-          bgOnHover ? "hover:bg-red-200" : "hover:bg-gray-200"
-        }`}
-      >
-        {icon}
-      </button>
+      <Link to={path}>
+        <button
+          data-tip
+          data-for={title}
+          className={`rounded-3xl p-5 text-3xl md:text-4xl ${
+            bgOnHover ? "hover:bg-red-200" : "hover:bg-gray-200"
+          }`}
+        >
+          {icon}
+        </button>
+      </Link>
       {/** tooltip */}
       <ReactTooltip id={title}>
         <span>{title}</span>
@@ -31,7 +34,7 @@ const Interaction = ({ forProfile }) => {
     <div className="h-full">
       {forProfile ? (
         <div className="flex md:flex-col justify-around h-screen">
-          <InteractionButton title="Home" icon={<CgHome />} />
+          <InteractionButton title="Home" icon={<CgHome />} path="/" />
           <InteractionButton title="Like" icon={<FcLike />} />
           <InteractionButton title="Dislike" icon={<FcDislike />} />
         </div>

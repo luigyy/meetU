@@ -1,8 +1,11 @@
 import React from "react";
 import TinderCard from "react-tinder-card";
 import { Link } from "react-router-dom";
+import { useStateContext } from "../contexts/ContextProvider";
 
-const Cards = ({ people }) => {
+const Cards = () => {
+  const { people } = useStateContext();
+
   return (
     <div>
       <div className="flex justify-center">
