@@ -28,9 +28,9 @@ const InteractionButton = ({ title, icon, bgOnHover }) => {
 
 const Interaction = ({ forProfile }) => {
   return (
-    <div>
+    <div className="h-full">
       {forProfile ? (
-        <div className="flex md:flex-col justify-around h-full">
+        <div className="flex md:flex-col justify-around h-screen">
           <InteractionButton title="Home" icon={<CgHome />} />
           <InteractionButton title="Like" icon={<FcLike />} />
           <InteractionButton title="Dislike" icon={<FcDislike />} />
