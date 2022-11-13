@@ -23,7 +23,9 @@ const Main = () => {
     <div>
       <Navbar />
       <Cards people={people} />
-      <Interaction people={people} />
+      <div className="fixed w-full top-[520px]">
+        <Interaction forProfile={false} people={people} />
+      </div>
     </div>
   );
 };

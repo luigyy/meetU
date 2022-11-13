@@ -3,9 +3,10 @@ import { FcLike } from "react-icons/fc";
 import { FcDislike } from "react-icons/fc";
 import { BsArrowReturnLeft, BsArrowReturnRight } from "react-icons/bs";
 import ReactTooltip from "react-tooltip";
+import { CgHome, CgProfile } from "react-icons/cg";
 
 //======================
-const InteractionButton = ({ title, style, icon, bgOnHover, tooltip }) => {
+const InteractionButton = ({ title, icon, bgOnHover }) => {
   return (
     <>
       <button
@@ -25,13 +26,22 @@ const InteractionButton = ({ title, style, icon, bgOnHover, tooltip }) => {
   );
 };
 
-const Interaction = () => {
+const Interaction = ({ forProfile }) => {
   return (
-    <div className="flex justify-evenly  w-full fixed top-[520px]  ">
-      <InteractionButton title="Backward" icon={<BsArrowReturnLeft />} />
-      <InteractionButton title="Like" icon={<FcLike />} bgOnHover="red" />
-      <InteractionButton title="Pass" icon={<FcDislike />} />
-      <InteractionButton title="Forward" icon={<BsArrowReturnRight />} />
+    <div>
+      {forProfile ? (
+        <div className="flex md:flex-col justify-around h-full">
+          <InteractionButton title="Home" icon={<CgHome />} />
+          <InteractionButton title="Like" icon={<FcLike />} />
+          <InteractionButton title="Dislike" icon={<FcDislike />} />
+        </div>
+      ) : (
+        <div className="flex justify-around w-full">
+          <InteractionButton title="Anterior" icon={<BsArrowReturnLeft />} />
+          <InteractionButton title="Ver Perfil" icon={<CgProfile />} />
+          <InteractionButton title="Anterior" icon={<BsArrowReturnRight />} />
+        </div>
+      )}
     </div>
   );
 };
