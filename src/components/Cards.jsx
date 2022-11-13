@@ -23,7 +23,7 @@ const Cards = () => {
                 {item.name}
                 <span className="text-lg">, {item.age}</span>
               </span>
-              <Link to="/profile" state={{ person: item }}>
+              <Link to="/profile">
                 <span className=" p-4 absolute italic text-white bottom-2 right-2 ">
                   See Profile
                 </span>

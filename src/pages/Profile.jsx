@@ -3,15 +3,14 @@ import HeaderWithLogo from "../components/HeaderWithLogo";
 import { useLocation, Navigate } from "react-router-dom";
 import "../Profile.css";
 import Interaction from "../components/Interaction";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Profile = () => {
-  //TODO: check if person is null and redirect to main
-  //get person object from Link
-  const state = useLocation().state;
-  if (!state) return <Navigate to="/" replace />;
-
-  const person = state.person;
-
+  //
+  const { people } = useStateContext();
+  const lastPersonIndex = people.length - 1;
+  const person = people[lastPersonIndex];
+  //
   return (
     <div>
       <div className="mr-[6%]">

@@ -7,10 +7,10 @@ import { CgHome, CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 
 //======================
-const InteractionButton = ({ title, icon, bgOnHover, path }) => {
+const InteractionButton = ({ title, icon, bgOnHover, path, customfunc }) => {
   return (
     <>
-      <Link to={path}>
+      <Link onClick={customfunc} to={path}>
         <button
           data-tip
           data-for={title}
