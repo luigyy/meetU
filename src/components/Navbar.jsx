@@ -1,16 +1,18 @@
 import React from "react";
 import { FiSettings } from "react-icons/fi";
 import { BsChatSquareDots } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbutton = ({ icon, path }) => {
+  const navigate = useNavigate();
   return (
     <div>
-      <Link to={path}>
-        <button className="text-slate-700 rounded-3xl hover:bg-slate-200 p-5 text-3xl">
-          {icon}
-        </button>
-      </Link>
+      <button
+        onClick={() => (path ? navigate(path) : null)}
+        className="text-slate-700 rounded-3xl hover:bg-slate-200 p-5 text-3xl"
+      >
+        {icon}
+      </button>
     </div>
   );
 };
