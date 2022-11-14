@@ -20,6 +20,7 @@ function App() {
         {/**public routes */}
         {publicRoutes.map((route) => (
           <Route
+            key={route.path}
             path={route.path}
             element={
               <PublicRoutes logged={LOGGED}>{route.component}</PublicRoutes>

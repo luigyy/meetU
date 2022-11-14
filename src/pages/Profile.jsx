@@ -6,11 +6,13 @@ import Interaction from "../components/Interaction";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Profile = () => {
-  //
+  // get person data
   const { people } = useStateContext();
   const lastPersonIndex = people.length - 1;
   const person = people[lastPersonIndex];
   //
+
+  const { deletePerson } = useStateContext();
   return (
     <div>
       <div className="mr-[6%]">
@@ -152,7 +154,7 @@ const Profile = () => {
       </div>
       {/* interaction bar  */}
       <div className="fixed h-screen w-[6%] bg-gray-200 top-0 right-0">
-        <Interaction forProfile={true} />
+        <Interaction forProfile={true} deletePerson={deletePerson} />
       </div>
     </div>
   );

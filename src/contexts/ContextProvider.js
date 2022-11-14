@@ -18,17 +18,21 @@ const peopleData = [
   },
 ];
 
+const test = () => {
+  console.log("test function");
+};
 export const ContextProvider = ({ children }) => {
   const [people, setPeople] = useState(peopleData);
 
   //delete last person from people array
-  const deletePeople = () => {
-    const targetIndex = people.length - 1;
+  const deletePerson = () => {
+    const targetIndex = people.length - 1; //index for last element in array
     const filteredPeople = people.filter((_, index) => index !== targetIndex);
     setPeople(filteredPeople);
   };
+
   return (
-    <StateContext.Provider value={{ people, deletePeople }}>
+    <StateContext.Provider value={{ people, deletePerson, test }}>
       {children}
     </StateContext.Provider>
   );
