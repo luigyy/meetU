@@ -1,4 +1,5 @@
 import React, { useContext, createContext, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const StateContext = createContext();
 
@@ -18,11 +19,11 @@ const peopleData = [
   },
 ];
 
-const test = () => {
-  console.log("test function");
-};
 export const ContextProvider = ({ children }) => {
   const [people, setPeople] = useState(peopleData);
+
+  //test: delete this func
+  const test = () => {};
 
   //delete last person from people array
   const deletePerson = () => {

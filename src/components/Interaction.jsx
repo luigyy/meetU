@@ -4,23 +4,25 @@ import { FcDislike } from "react-icons/fc";
 import { BsArrowReturnLeft, BsArrowReturnRight } from "react-icons/bs";
 import ReactTooltip from "react-tooltip";
 import { CgHome, CgProfile } from "react-icons/cg";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useStateContext } from "../contexts/ContextProvider";
 
 //======================
 const InteractionButton = ({ title, icon, bgOnHover, path, customfunc }) => {
   return (
     <>
-      <button
-        data-tip
-        data-for={title}
-        onClick={customfunc}
-        className={`rounded-3xl p-3 text-2xl items-center ${
-          bgOnHover ? "hover:bg-red-200" : "hover:bg-gray-300"
-        }`}
-      >
-        {icon}
-      </button>
+      <Link to={path}>
+        <button
+          data-tip
+          data-for={title}
+          onClick={customfunc}
+          className={`rounded-3xl p-3 text-2xl items-center ${
+            bgOnHover ? "hover:bg-red-200" : "hover:bg-gray-300"
+          }`}
+        >
+          {icon}
+        </button>
+      </Link>
       {/** tooltip */}
       <ReactTooltip id={title}>
         <span>{title}</span>
@@ -49,7 +51,7 @@ const Interaction = ({ forProfile }) => {
           <InteractionButton
             title="Ver Perfil"
             icon={<CgProfile />}
-            customfunc={deletePerson}
+            customfunc={test}
           />
           <InteractionButton title="Anterior" icon={<BsArrowReturnRight />} />
         </div>
