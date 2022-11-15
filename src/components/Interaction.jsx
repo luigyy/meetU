@@ -38,9 +38,9 @@ const InteractionButton = ({ title, icon, bgOnHover, path, customfunc }) => {
 const Interaction = ({ forProfile }) => {
   const { test, deletePerson } = useStateContext();
   return (
-    <div className="h-full">
+    <div className="md:h-full w-full">
       {forProfile ? (
-        <div className="flex md:flex-col justify-around h-screen items-center">
+        <div className="flex md:flex-col justify-around md:h-screen w-full items-center">
           <InteractionButton title="Home" icon={<CgHome />} path="/" />
           <InteractionButton title="Like" icon={<FcLike />} />
           <InteractionButton

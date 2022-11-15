@@ -153,7 +153,7 @@ const Profile = () => {
         </div>
       </div>
       {/* interaction bar  */}
-      <div className="fixed h-screen w-[6%] bg-gray-200 top-0 right-0">
+      <div className="fixed md:h-screen  md:w-[6%] bg-gray-200 md:top-0 md:right-0 bottom-0 h-[10vh] w-full">
         <Interaction forProfile={true} deletePerson={deletePerson} />
       </div>
     </div>
