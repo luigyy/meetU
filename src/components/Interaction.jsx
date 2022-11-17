@@ -36,7 +36,7 @@ const InteractionButton = ({ title, icon, bgOnHover, path, customfunc }) => {
 };
 
 const Interaction = ({ forProfile }) => {
-  const { test, deletePerson } = useStateContext();
+  const { deletePerson } = useStateContext();
   return (
     <div className="md:h-full w-full">
       {forProfile ? (
@@ -56,7 +56,7 @@ const Interaction = ({ forProfile }) => {
           <InteractionButton
             title="Ver Perfil"
             icon={<CgProfile />}
-            customfunc={test}
+            path="/profile"
           />
           <InteractionButton title="Anterior" icon={<BsArrowReturnRight />} />
         </div>
