@@ -36,7 +36,7 @@ const InteractionButton = ({ title, icon, bgOnHover, path, customfunc }) => {
 };
 
 const Interaction = ({ forProfile }) => {
-  const { deletePerson } = useStateContext();
+  const { deletePerson, moveCardRight, moveCardLeft } = useStateContext();
   return (
     <div className="md:h-full w-full">
       {forProfile ? (
@@ -52,13 +52,21 @@ const Interaction = ({ forProfile }) => {
         </div>
       ) : (
         <div className="flex justify-around w-full items-center">
-          <InteractionButton title="Anterior" icon={<BsArrowReturnLeft />} />
+          <InteractionButton
+            title="Anterior"
+            icon={<BsArrowReturnLeft />}
+            customfunc={moveCardLeft}
+          />
           <InteractionButton
             title="Ver Perfil"
             icon={<CgProfile />}
             path="/profile"
           />
-          <InteractionButton title="Anterior" icon={<BsArrowReturnRight />} />
+          <InteractionButton
+            title="Anterior"
+            icon={<BsArrowReturnRight />}
+            customfunc={moveCardRight}
+          />
         </div>
       )}
     </div>
