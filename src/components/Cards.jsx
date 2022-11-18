@@ -3,6 +3,7 @@ import TinderCard from "react-tinder-card";
 import { useStateContext } from "../contexts/ContextProvider";
 import { FcLike, FcDislike } from "react-icons/fc";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import ReactTooltip from "react-tooltip";
 
 const Cards = () => {
   const { people, deletePerson } = useStateContext();
@@ -36,18 +37,32 @@ const Cards = () => {
       </div>
       {/* left  */}
       <button>
-        <span className="text-4xl fixed top-[45vh] left-[10%]">
+        <span
+          data-tip
+          data-for="match"
+          className="text-4xl fixed top-[45vh] left-[10%]"
+        >
           <BsArrowLeftShort />
           <FcLike />
         </span>
+        <ReactTooltip id="match">
+          <span>Swipe left to match</span>
+        </ReactTooltip>
       </button>
 
       {/* right  */}
       <button onClick={deletePerson}>
-        <span className="text-4xl fixed top-[45vh] right-[10%]">
+        <span
+          data-tip
+          data-for="pass"
+          className="text-4xl fixed top-[45vh] right-[10%]"
+        >
           <BsArrowRightShort />
           <FcDislike />
         </span>
+        <ReactTooltip id="pass">
+          <span>Swipe right to pass</span>
+        </ReactTooltip>
       </button>
     </div>
   );
