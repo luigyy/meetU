@@ -44,9 +44,9 @@ const Cards = () => {
         >
           <BsArrowLeftShort />
           <FcLike />
-        </span>
+        </span>{" "}
         <ReactTooltip id="match">
-          <span>Swipe left to match</span>
+          <span>Scroll left to match</span>
         </ReactTooltip>
       </button>
 
@@ -61,7 +61,7 @@ const Cards = () => {
           <FcDislike />
         </span>
         <ReactTooltip id="pass">
-          <span>Swipe right to pass</span>
+          <span>Scroll Right to pass</span>
         </ReactTooltip>
       </button>
     </div>
