@@ -28,23 +28,8 @@ export const ContextProvider = ({ children }) => {
     setPeople(filteredPeople);
   };
 
-  //TDOO: document this 2 functions
-  const moveCardRight = () => {
-    const tempPeople = people;
-    tempPeople.unshift(people.pop());
-    setPeople(tempPeople);
-  };
-
-  const moveCardLeft = () => {
-    const tempPeople = people;
-    tempPeople.push(people.shift());
-    setPeople(tempPeople);
-  };
-
   return (
-    <StateContext.Provider
-      value={{ people, deletePerson, moveCardLeft, moveCardRight }}
-    >
+    <StateContext.Provider value={{ people, deletePerson }}>
       {children}
     </StateContext.Provider>
   );
