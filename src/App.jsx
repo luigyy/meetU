@@ -10,8 +10,13 @@ import { protectedRoutes, publicRoutes } from "./routes";
 import PrivateRoutes from "./components/PrivateRoutes";
 import PublicRoutes from "./components/PublicRoutes";
 import NotFound from "./pages/NotFound";
+import { useEffect } from "react";
+import authLogin from "./authentication/useLogin";
 
 function App() {
+  useEffect(() => {
+    authLogin();
+  }, []);
   //see ./routes.js for routes
   const LOGGED = true;
   return (
