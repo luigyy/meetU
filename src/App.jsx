@@ -11,7 +11,8 @@ import PrivateRoutes from "./components/PrivateRoutes";
 import PublicRoutes from "./components/PublicRoutes";
 import NotFound from "./pages/NotFound";
 import { useEffect } from "react";
-import authLogin from "./authentication/useLogin";
+import authLogin from "./authentication/authLogin";
+import authRegister from "./authentication/authRegister";
 
 function App() {
   useEffect(() => {
