@@ -15,11 +15,9 @@ import authLogin from "./authentication/authLogin";
 import authRegister from "./authentication/authRegister";
 
 function App() {
-  useEffect(() => {
-    authLogin();
-  }, []);
+  // useEffect(() => {}, []);
   //see ./routes.js for routes
-  const LOGGED = true;
+  const LOGGED = false;
   return (
     <Router>
       <Routes>

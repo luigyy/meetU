@@ -5,7 +5,7 @@ import Login from "../components/Login";
 import "../Hero.css";
 
 const Hero = () => {
-  // style in tailwind for register and login buttons
+  //states to toggle between login and register forms
   const [registerState, setRegisterState] = useState(false);
   const [loginState, setLoginState] = useState(false);
 

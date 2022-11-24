@@ -4,16 +4,16 @@ import axios from "axios";
 
 const URL = "http://localhost:5000/login";
 
-const authLogin = async () => {
+const authLogin = async ({ email, password }) => {
   //tests
-  const email = "luigy06@gmail.com";
-  const password = "cartago23";
-  //tests
+  // const email = "luigy06@gmail.com";
+  // const password = "cartago23";
+  // //tests
 
   axios
     .post(
       URL,
-      { email: email, password: password },
+      { email, password },
       { headers: "Content-Type: application/json" }
     )
     .then((res) => console.log(res.data))
