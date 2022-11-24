@@ -75,7 +75,7 @@ const Register = ({ registerState }) => {
   };
   //==============================
   return (
-    <div className={`w-full max-w-xs ${registerState ? "" : "hidden"}`}>
+    <div className={`w-full max-w-xs md:mt-16 `}>
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <p className="text-gray-700 font-bold text-lg text-center pb-4">
           Registrarse

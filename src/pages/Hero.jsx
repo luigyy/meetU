@@ -62,11 +62,19 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="md:w-[40%]  md:min-h-1/2 p-10 md:relative md:bottom-[400px] md:ml-auto w-2/3 mx-auto md:m-0 rounded-3xl ">
-          <Login loginState={loginState} />
+        <div
+          className={`md:w-[40%]  md:min-h-1/2 p-10 md:relative md:bottom-[400px] md:ml-auto w-2/3 mx-auto md:m-0 rounded-3xl ${
+            loginState ? "" : "hidden"
+          }`}
+        >
+          <Login />
         </div>
-        <div className="md:w-[40%]  md:min-h-1/2 p-10 md:relative md:bottom-[550px] md:ml-auto w-2/3 mx-auto md:m-0 rounded-3xl ">
-          <Register registerState={registerState} />
+        <div
+          className={`md:w-[40%]  md:min-h-1/2 p-10 md:relative md:bottom-[550px] md:ml-auto w-2/3 mx-auto md:m-0 rounded-3xl ${
+            registerState ? "" : "hidden"
+          } `}
+        >
+          <Register />
         </div>
       </div>
     </div>
