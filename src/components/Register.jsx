@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "../index.css";
-import authRegister from "../authentication/authRegister";
+import authRegister from "../authentication/handleRegister";
 
 // Showing sucess message
 const SucessMessage = ({ submitted }) => {
@@ -81,26 +81,19 @@ const Register = ({ registerState }) => {
           Registrarse
         </p>
         <div className="mb-4">
-          <label
-            class="block text-gray-700 text-sm font-bold mb-2"
-            for="username"
-          >
+          <label className="block text-gray-700 text-sm font-bold mb-2">
             Nombre
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
             type="text"
             placeholder="Nombre"
             onChange={(e) => handleName(e)}
           />
         </div>
 
-        <div class="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            for="username"
-          >
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
             Apellido
           </label>
           <input
@@ -112,26 +105,19 @@ const Register = ({ registerState }) => {
           />
         </div>
 
-        <div class="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            for="username"
-          >
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
             Email
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
             type="text"
             placeholder="Email"
             onChange={(e) => handleEmail(e)}
           />
         </div>
-        <div class="mb-6">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            for="password"
-          >
+        <div className="mb-6">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
             Password
           </label>
           <input
@@ -142,7 +128,7 @@ const Register = ({ registerState }) => {
             onChange={(e) => handlePassword(e)}
           />
         </div>
-        <div class="flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <button
             className="bg-blue-400 transition-color duration-500 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"

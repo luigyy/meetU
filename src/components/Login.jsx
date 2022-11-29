@@ -1,13 +1,14 @@
 import React from "react";
 import { useState } from "react";
-import authLogin from "../authentication/authLogin";
+import handleLogin from "../authentication/handleLogin";
+import { useStateContext } from "../contexts/ContextProvider";
 import "../index.css";
 
 // Showing sucess message
 const SucessMessage = ({ submitted }) => {
   return (
     <div className="">
-      <h1>User successfully registered!!</h1>
+      <h1>User successfully logged in!!</h1>
     </div>
   );
 };
@@ -22,6 +23,7 @@ const ErrorMessage = ({ error }) => {
 };
 
 const Login = ({ loginState }) => {
+  const { setLogged } = useStateContext();
   //login
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,17 +46,20 @@ const Login = ({ loginState }) => {
   };
 
   // Handling the form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (email === "" || password === "") {
-      setError(true);
-    } else {
-      setSubmitted(true);
-      setError(false);
+    if (!email || !password) {
+      return setError(true);
     }
-    setEmail("");
-    setPassword("");
-    authLogin(email, password);
+    try {
+      const response = await handleLogin(email, password);
+      setLogged(true);
+      console.log(response.data);
+      setEmail("");
+      setPassword("");
+    } catch (err) {
+      console.log(err);
+    }
   };
   //==============================
   return (
@@ -64,19 +69,19 @@ const Login = ({ loginState }) => {
           <p className="text-gray-700 font-bold text-lg text-center pb-4">
             Iniciar sesión
           </p>
-          <div class="mb-4">
+          <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Email
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
+              className="shadow  appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={email}
               type="text"
               placeholder="Email"
               onChange={(e) => handleEmail(e)}
             />
           </div>
-          <div class="mb-6">
+          <div className="mb-6">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Password
             </label>
@@ -85,6 +90,7 @@ const Login = ({ loginState }) => {
               type="password"
               placeholder="******************"
               onChange={(e) => handlePassword(e)}
+              value={password}
             />
           </div>
           <div className="flex items-center justify-between ">

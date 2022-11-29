@@ -10,14 +10,11 @@ import { protectedRoutes, publicRoutes } from "./routes";
 import PrivateRoutes from "./components/PrivateRoutes";
 import PublicRoutes from "./components/PublicRoutes";
 import NotFound from "./pages/NotFound";
-import { useEffect } from "react";
-import authLogin from "./authentication/authLogin";
-import authRegister from "./authentication/authRegister";
+import { useEffect, useState } from "react";
+import { useStateContext } from "./contexts/ContextProvider";
 
 function App() {
-  // useEffect(() => {}, []);
-  //see ./routes.js for routes
-  const LOGGED = false;
+  const { logged } = useStateContext();
   return (
     <Router>
       <Routes>
@@ -27,7 +24,7 @@ function App() {
             key={route.path}
             path={route.path}
             element={
-              <PublicRoutes logged={LOGGED}>{route.component}</PublicRoutes>
+              <PublicRoutes logged={logged}>{route.component}</PublicRoutes>
             }
           />
         ))}
@@ -38,7 +35,7 @@ function App() {
           <Route
             path={route.path}
             element={
-              <PrivateRoutes logged={LOGGED}>{route.component}</PrivateRoutes>
+              <PrivateRoutes logged={logged}>{route.component}</PrivateRoutes>
             }
             key={route.path}
           />

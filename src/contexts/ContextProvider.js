@@ -20,6 +20,7 @@ const peopleData = [
 
 export const ContextProvider = ({ children }) => {
   const [people, setPeople] = useState(peopleData);
+  const [logged, setLogged] = useState(false);
 
   //delete last person from people array
   const deletePerson = () => {
@@ -29,7 +30,7 @@ export const ContextProvider = ({ children }) => {
   };
 
   return (
-    <StateContext.Provider value={{ people, deletePerson }}>
+    <StateContext.Provider value={{ people, deletePerson, logged, setLogged }}>
       {children}
     </StateContext.Provider>
   );
