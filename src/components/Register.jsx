@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
+import handleRegister from "../authentication/handleRegister";
 import "../index.css";
-import authRegister from "../authentication/handleRegister";
 
 // Showing sucess message
 const SucessMessage = ({ submitted }) => {
   return (
     <div className="">
-      <h1>User successfully registered!!</h1>
+      <h1> {submitted}</h1>
     </div>
   );
 };
@@ -21,8 +21,7 @@ const ErrorMessage = ({ error }) => {
   );
 };
 
-const Register = ({ registerState }) => {
-  //
+const Register = () => {
   //states for register and login buttons
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
@@ -58,20 +57,28 @@ const Register = ({ registerState }) => {
   };
 
   // Handling the form submission
-  const handleSubmit = (e) => {
-    console.log(name, lastname);
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(false);
+    //checked if all fields are provided
     if (name === "" || lastname === "" || email === "" || password === "") {
-      setError(true);
-    } else {
-      setSubmitted(true);
-      setError(false);
-      authRegister(name, lastname, email, password);
+      return setError("All fields are required");
     }
-    setName("");
-    setLastname("");
-    setEmail("");
-    setPassword("");
+
+    try {
+      const response = await handleRegister(name, lastname, email, password);
+
+      //clear fields
+      setName("");
+      setLastname("");
+      setEmail("");
+      setPassword("");
+      //clear fields
+
+      setSubmitted("Registered successfully");
+    } catch (err) {
+      setError(err.response.data.message);
+    }
   };
   //==============================
   return (

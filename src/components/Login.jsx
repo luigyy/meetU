@@ -8,7 +8,7 @@ import "../index.css";
 const SucessMessage = ({ submitted }) => {
   return (
     <div className="">
-      <h1>User successfully logged in!!</h1>
+      <h1>{submitted}</h1>
     </div>
   );
 };
@@ -17,12 +17,12 @@ const SucessMessage = ({ submitted }) => {
 const ErrorMessage = ({ error }) => {
   return (
     <div className=" text-center rounded-md px-4 py-2 mt-3 text-white bg-red-500">
-      <h1>Please enter all the fields</h1>
+      <h1>{error || "An error happend while loggin in"}</h1>
     </div>
   );
 };
 
-const Login = ({ loginState }) => {
+const Login = () => {
   const { setLogged } = useStateContext();
   //login
   const [email, setEmail] = useState("");
@@ -48,17 +48,24 @@ const Login = ({ loginState }) => {
   // Handling the form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(false);
     if (!email || !password) {
-      return setError(true);
+      return setError("All fields are required");
     }
     try {
       const response = await handleLogin(email, password);
-      setLogged(true);
       console.log(response.data);
+
+      //clear fields
       setEmail("");
       setPassword("");
+      //clear fields
+
+      setSubmitted("Login successfully");
+
+      setLogged(true);
     } catch (err) {
-      console.log(err);
+      setError(err.response.data.message);
     }
   };
   //==============================
