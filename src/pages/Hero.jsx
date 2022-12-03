@@ -22,7 +22,7 @@ const Hero = () => {
     "font-semibold  p-3 px-4 rounded-3xl hover:bg-[rgb(0,0,0,.5)]";
   return (
     <div className="mb-4">
-      <div className="overflow-hidden md:h-screen changeBg bg-cover bg-no-repeat bg-center">
+      <div className="overflow-auto h-screen changeBg bg-cover bg-no-repeat bg-center">
         <div className="text-white flex justify-center bg-[rgb(0,0,0,.4)] py-5 space-x-9">
           <button
             onClick={(e) => setRegisterState(!registerState)}
