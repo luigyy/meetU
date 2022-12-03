@@ -10,10 +10,10 @@ const Main = () => {
   return (
     <div>
       <Navbar />
-      {!people ? (
-        <div>
+      {people ? (
+        <div className="tall:mt-20 giant:mt-44 ">
           <Cards people={people} />{" "}
-          <div className="fixed w-full top-[520px]">
+          <div className="fixed w-full top-[520px] tall:mt-20 giant:mt-72 huge:mt-[500px]">
             <Interaction forProfile={false} people={people} />
           </div>{" "}
         </div>

@@ -55,8 +55,8 @@ const Chats = () => {
               }`}
             >
               {/**if string if bigger than 75 chars, chop it so it can fit into the box */}
-              {item.lastMessage.length > 65
-                ? item.lastMessage.substring(0, 65) + "..."
+              {item.lastMessage.length > 50
+                ? item.lastMessage.substring(0, 50) + "..."
                 : item.lastMessage}
             </div>
 
