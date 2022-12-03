@@ -5,9 +5,8 @@ import { FcLike, FcDislike } from "react-icons/fc";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import ReactTooltip from "react-tooltip";
 
-const Cards = () => {
-  const { people, deletePerson } = useStateContext();
-
+const Cards = ({ people }) => {
+  const { deletePerson } = useStateContext();
   //onSwipe function for tinder card
   const onSwipe = (direction) => {
     if (direction === "right") return deletePerson();

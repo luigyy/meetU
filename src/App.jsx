@@ -10,11 +10,35 @@ import { protectedRoutes, publicRoutes } from "./routes";
 import PrivateRoutes from "./components/PrivateRoutes";
 import PublicRoutes from "./components/PublicRoutes";
 import NotFound from "./pages/NotFound";
-import { useEffect, useState } from "react";
 import { useStateContext } from "./contexts/ContextProvider";
+import { useCookies } from "react-cookie";
+import axios from "axios";
+
+const DEV_URL = "http://localhost:5000/checkToken";
+
+//TODO: logged and setLogged must be change to contain user data
 
 function App() {
-  const { logged } = useStateContext();
+  //
+  const { logged, setLogged } = useStateContext();
+
+  //verify cookie
+  const [cookies, setCookies] = useCookies();
+
+  const verifyCookie = () => {
+    axios
+      .post(DEV_URL, {
+        headers: { "Content-Type": "application/json", auth: cookies["token"] },
+      })
+      .then((res) => {
+        setCookies["auth"] = res.data.data.token; //update token
+        setLogged(true); //logged
+      })
+      .catch((err) => console.log(err)); //);
+  };
+  if (cookies["token"]) verifyCookie();
+  //verify cookie
+
   return (
     <Router>
       <Routes>

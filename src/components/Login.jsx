@@ -3,6 +3,9 @@ import { useState } from "react";
 import handleLogin from "../authentication/handleLogin";
 import { useStateContext } from "../contexts/ContextProvider";
 import "../index.css";
+import { useCookies } from "react-cookie";
+
+//TODO: change setLogged to contain user information
 
 // Showing sucess message
 const SucessMessage = ({ submitted }) => {
@@ -23,6 +26,8 @@ const ErrorMessage = ({ error }) => {
 };
 
 const Login = () => {
+  const [cookies, setCookies] = useCookies();
+
   const { setLogged } = useStateContext();
   //login
   const [email, setEmail] = useState("");
@@ -54,24 +59,29 @@ const Login = () => {
     }
     try {
       const response = await handleLogin(email, password);
-      console.log(response.data);
-
-      //clear fields
-      setEmail("");
-      setPassword("");
-      //clear fields
 
       setSubmitted("Login successfully");
 
       setLogged(true);
+
+      //set token to cookie
+      const token = response.data.data.token;
+      console.log(token);
+      const maxAge = 60 * 60; //in seconds
+      setCookies("token", token, { maxAge });
+      //set token to cookie
     } catch (err) {
       setError(err.response.data.message);
     }
+    //clear fields
+    setEmail("");
+    setPassword("");
+    //clear fields
   };
   //==============================
   return (
     <div>
-      <div className={` w-full max-w-xs`}>
+      <div className=" w-full max-w-xs">
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <p className="text-gray-700 font-bold text-lg text-center pb-4">
             Iniciar sesión
@@ -81,7 +91,7 @@ const Login = () => {
               Email
             </label>
             <input
-              className="shadow  appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               value={email}
               type="text"
               placeholder="Email"
@@ -106,7 +116,7 @@ const Login = () => {
               type="button"
               onClick={(e) => handleSubmit(e)}
             >
-              Sign In
+              Iniciar sesión
             </button>
             <a
               className="inline-block transition-color duration-500 align-baseline font-bold text-sm text-blue-400 hover:text-blue-500"

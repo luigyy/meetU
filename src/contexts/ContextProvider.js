@@ -20,7 +20,7 @@ const peopleData = [
 
 export const ContextProvider = ({ children }) => {
   const [people, setPeople] = useState(peopleData);
-  const [logged, setLogged] = useState(false);
+  const [logged, setLogged] = useState(true);
 
   //delete last person from people array
   const deletePerson = () => {

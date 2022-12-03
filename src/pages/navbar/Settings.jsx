@@ -18,6 +18,9 @@ const SettingsButton = ({ title, customFunc }) => {
 };
 //testing only, do not push to main
 const Settings = () => {
+  const handleLogout = () => {
+    console.log("test");
+  };
   const { setLogged } = useStateContext();
   return (
     <div>
@@ -25,7 +28,7 @@ const Settings = () => {
       <SettingsButton title="Edit Profile" />
       <SettingsButton title="About " />
       <SettingsButton title="Contact " />
-      <SettingsButton title="Log out" customFunc={() => setLogged(false)} />
+      <SettingsButton title="Log out" customFunc={handleLogout} />
     </div>
   );
 };

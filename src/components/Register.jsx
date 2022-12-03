@@ -6,7 +6,7 @@ import "../index.css";
 // Showing sucess message
 const SucessMessage = ({ submitted }) => {
   return (
-    <div className="">
+    <div className="text-center rounded-md px-4 py-2 mt-3 text-white bg-green-500">
       <h1> {submitted}</h1>
     </div>
   );
@@ -141,7 +141,7 @@ const Register = () => {
             type="button"
             onClick={(e) => handleSubmit(e)}
           >
-            Sign In
+            Registrarse
           </button>
           <a
             className="inline-block transition-color duration-500 align-baseline font-bold text-sm text-blue-400 hover:text-blue-500"
