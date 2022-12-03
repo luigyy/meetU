@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import HeaderForNavbarButtons from "../../components/HeaderForNavbarButtons";
 import { useStateContext } from "../../contexts/ContextProvider";
+import { useCookies } from "react-cookie";
 
 const SettingsButton = ({ title, customFunc }) => {
   return (
@@ -18,10 +19,13 @@ const SettingsButton = ({ title, customFunc }) => {
 };
 //testing only, do not push to main
 const Settings = () => {
-  const handleLogout = () => {
-    console.log("test");
-  };
   const { setLogged } = useStateContext();
+  const [cookies, setCookies, removeCookies] = useCookies();
+
+  const handleLogout = () => {
+    setLogged(false);
+    removeCookies("token");
+  };
   return (
     <div>
       <HeaderForNavbarButtons title="Settings" />
