@@ -11,9 +11,9 @@ const Main = () => {
     <div>
       <Navbar />
       {people ? (
-        <div className="tall:mt-20 giant:mt-44 ">
+        <div className="tall:mt-32 giant:mt-44 ">
           <Cards people={people} />{" "}
-          <div className="fixed w-full top-[520px] tall:mt-20 giant:mt-72 huge:mt-[500px]">
+          <div className="fixed w-full top-[520px] tall:mt-28 giant:mt-72 huge:mt-[500px]">
             <Interaction forProfile={false} people={people} />
           </div>{" "}
         </div>

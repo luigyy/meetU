@@ -22,7 +22,7 @@ const Cards = ({ people }) => {
             preventSwipe={["up", "down", "", ""]}
           >
             <div
-              className="relative w-[270px] md:w-[500px] giant:w-[500px] huge:w-[800px] huge:h-[550px] max-w-full h-96 bg-no-repeat rounded-3xl mx-auto bg-cover shadow-2xl "
+              className="relative w-[270px] md:w-[500px] giant:w-[500px] huge:w-[800px] huge:h-[550px] wide:w-[600px] max-w-full h-96 bg-no-repeat rounded-3xl mx-auto bg-cover shadow-2xl "
               style={{ backgroundImage: `url(${item.img})` }}
             >
               <span className="absolute text-white top-2 left-2 text-xl font-bold -tracking-wide">

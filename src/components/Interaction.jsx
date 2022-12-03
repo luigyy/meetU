@@ -20,7 +20,7 @@ const InteractionButton = ({ title, icon, bgOnHover, path, customfunc }) => {
           if (customfunc) customfunc();
           return path ? navigate(path) : null;
         }}
-        className={`rounded-3xl p-3 md:text-4xl giant:text-7xl  text-3xl items-center ${
+        className={`rounded-3xl p-3 text-4xl giant:text-7xl items-center ${
           bgOnHover ? "hover:bg-red-200" : "hover:bg-gray-300"
         }`}
       >
