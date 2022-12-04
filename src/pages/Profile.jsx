@@ -63,7 +63,7 @@ const Profile = () => {
                   <h1 className="text-3xl text-center font-semibold py-5">
                     More
                   </h1>
-                  <div className=" grid grid-cols-1 min-[470px]:grid-cols-2 min-[1200px]:grid-cols-3 gap-4 p-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
                     <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full">
                       <span>Buscando:</span>
                       <span className="">🔥 </span>{" "}

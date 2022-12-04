@@ -4,6 +4,7 @@ module.exports = {
 
   theme: {
     screens: {
+      md: "768px",
       tall: { raw: "(min-height: 800px)" }, //for tall cellphone
       giant: { raw: "(min-height: 1000px)" }, //for tablets that are tall but not so wide (<1000px)
       huge: { raw: "(min-height: 1000px) and (min-width: 1000px)" }, //for tall and wide devices (ipad pro for example)
