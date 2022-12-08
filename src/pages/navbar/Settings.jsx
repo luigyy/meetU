@@ -3,13 +3,18 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import HeaderForNavbarButtons from "../../components/HeaderForNavbarButtons";
 import { useStateContext } from "../../contexts/ContextProvider";
 import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
-const SettingsButton = ({ title, customFunc }) => {
+const SettingsButton = ({ title, customFunc, path }) => {
+  const navigate = useNavigate();
   return (
     <div>
       <div
         className="p-5 text-gray-600 cursor-pointer flex justify-between hover:bg-gray-50"
-        onClick={customFunc}
+        onClick={() => {
+          if (customFunc) customFunc();
+          return path ? navigate(path) : null;
+        }}
       >
         <button>{title}</button>
         <AiOutlineArrowRight />
@@ -29,7 +34,7 @@ const Settings = () => {
   return (
     <div>
       <HeaderForNavbarButtons title="Settings" />
-      <SettingsButton title="Edit Profile" />
+      <SettingsButton title="Edit Profile" path="/editProfile" />
       <SettingsButton title="Log out" customFunc={handleLogout} />
     </div>
   );
