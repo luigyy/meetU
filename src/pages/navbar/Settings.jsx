@@ -30,8 +30,6 @@ const Settings = () => {
     <div>
       <HeaderForNavbarButtons title="Settings" />
       <SettingsButton title="Edit Profile" />
-      <SettingsButton title="About " />
-      <SettingsButton title="Contact " />
       <SettingsButton title="Log out" customFunc={handleLogout} />
     </div>
   );

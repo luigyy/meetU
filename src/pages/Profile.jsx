@@ -11,10 +11,10 @@ const Profile = () => {
   const { people } = useStateContext();
   const lastPersonIndex = people.length - 1;
   const person = people[lastPersonIndex];
-  //
-  const { deletePerson } = useStateContext();
+  // get person data
 
   //
+  const { deletePerson } = useStateContext();
 
   return (
     <div>
@@ -47,16 +47,13 @@ const Profile = () => {
                 <div className="pl-10 ">
                   <h1 className="p-2 text-lg">
                     Universidad:{" "}
-                    <span className="text-base">
-                      {" "}
-                      Universidad de Costa Rica{" "}
-                    </span>{" "}
+                    <span className="text-base">{person.university}</span>
                   </h1>
                   <h1 className="p-2 text-lg">
-                    Carrera: <span className="text-base"> Psicología </span>{" "}
+                    Carrera: <span className="text-base"> {person.major} </span>{" "}
                   </h1>
                   <h1 className="p-2 text-lg">
-                    De <span className="text-base"> San José, San Pedro </span>{" "}
+                    De <span className="text-base"> {person.city}</span>{" "}
                   </h1>
                 </div>
                 <div className="pr-10 py-10 ">
@@ -66,32 +63,36 @@ const Profile = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
                     <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full">
                       <span>Buscando:</span>
-                      <span className="">🔥 </span>{" "}
+                      <span className="">{person.cards.lookingFor} </span>{" "}
                     </span>
 
                     <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full ">
                       <span>Preferencia:</span>
-                      <span className="pl-5 ">👩</span>
+                      <span className="pl-5 ">
+                        {person.cards.sexualPreference}
+                      </span>
                     </span>
 
                     <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full ">
                       <span>Altura:</span>
-                      <span className="pl-5"> 185cm </span>
+                      <span className="pl-5"> {person.cards.height}</span>
                     </span>
 
                     <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full ">
                       <span>Fiesta:</span>
-                      <span className="pl-5"> 👍🎊 </span>
+                      <span className="pl-5"> {person.cards.party}</span>
                     </span>
 
                     <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full ">
                       <span>🐕 ó 🐈:</span>
-                      <span className="pl-5">🐕</span>
+                      <span className="pl-5"> {person.cards.dogsOrCats}</span>
                     </span>
 
                     <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full  ">
                       <span>🏖️ ó ⛰️:</span>
-                      <span className="pl-5 ">🏖️</span>
+                      <span className="pl-5 ">
+                        {person.cards.beachOrMountain}
+                      </span>
                     </span>
                   </div>
                   <span></span>
@@ -105,12 +106,7 @@ const Profile = () => {
                   <h1 className="py-5 font-semibold text-3xl text-center">
                     Sobre mi
                   </h1>
-                  <p className="leading-7 text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Maxime pariatur ab voluptates! Sapiente totam ipsa eaque
-                    delectus ullam nam perferendis harum cupiditate aut omnis,
-                    natus praesentium. Id, eum eius. Distinctio?
-                  </p>
+                  <p className="leading-7 text-center">{person.aboutMe}</p>
                 </div>
 
                 <div>
@@ -128,10 +124,7 @@ const Profile = () => {
                 <div className="card w-96 bg-base-100 shadow-xl mx-auto">
                   <div className="card-body">
                     <h2 className="card-title"> Hobbies...</h2>
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Sint, nostrum?
-                    </p>
+                    <p>{person.hobbies}</p>
                   </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl mx-auto m-10 mt-20 ">
@@ -139,10 +132,7 @@ const Profile = () => {
                     <h2 className="card-title">
                       Idea para una primera cita 👀
                     </h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Rerum, sint!
-                    </p>
+                    <p>{person.idealFirstDate}</p>
                   </div>
                 </div>
               </div>
