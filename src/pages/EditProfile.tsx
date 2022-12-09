@@ -136,6 +136,7 @@ const Profile = () => {
                 </div>
               </div>
             </div>
+            <ResizableInput value="test" />
 
             {/* <div className="h-screen  m-5 mb-20 border-4 border-orange-500 mx-auto">
               {" "}
