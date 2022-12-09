@@ -1,31 +1,33 @@
 import React, { useContext, createContext, useState } from "react";
+import UserInterface from "../interfaces/UserInterface";
 
-const StateContext = createContext();
+interface StateProviderInterface {}
+const StateContext = createContext<StateProviderInterface>({});
 
 //get this from server
-const peopleData = [
+const peopleData: UserInterface[] = [
   {
-    name: "Jon Snow",
-    img: "https://upload.wikimedia.org/wikipedia/en/3/30/Jon_Snow_Season_8.png",
+    name: "jon snow",
+    img: "https://upload.wikimedia.org/wikipedia/en/3/30/jon_snow_season_8.png",
     age: "25",
-    slogan: "I still dont know nothing",
-    university: "UCR",
-    major: "Bussiness",
-    city: "San Jose, San Pedro",
+    slogan: "i still dont know nothing",
+    university: "ucr",
+    major: "bussiness",
+    city: "san jose, san pedro",
     cards: {
-      lookingFor: "🔥",
-      sexualPreference: "👩",
+      lookingfor: "🔥",
+      sexualpreference: "👩",
       height: "185cm",
       party: "👍🥳",
-      dogsOrCats: "🐕",
-      beachOrMountain: "🏖️",
+      dogsorcats: "🐕",
+      beachormountain: "🏖️",
     },
-    aboutMe:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis enim quis culpa voluptates, quia voluptatum magnam beatae, repudiandae distinctio voluptatem, hic dolore inventore eaque excepturi corrupti. Quae, architecto nam.",
+    aboutme:
+      " lorem ipsum dolor sit amet consectetur adipisicing elit. cupiditate perferendis enim quis culpa voluptates, quia voluptatum magnam beatae, repudiandae distinctio voluptatem, hic dolore inventore eaque excepturi corrupti. quae, architecto nam.",
     hobbies:
-      " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, quisquam! ",
-    idealFirstDate:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, ex?",
+      " lorem ipsum dolor sit amet consectetur, adipisicing elit. eligendi, quisquam! ",
+    idealfirstdate:
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. quibusdam, ex?",
   },
   {
     name: "Eddard Stark",
@@ -36,35 +38,37 @@ const peopleData = [
     city: "San Jose, San Pedro",
     major: "Bussiness",
     cards: {
-      lookingFor: "🔥",
-      sexualPreference: "👩",
+      lookingfor: "🔥",
+      sexualpreference: "👩",
       height: "185cm",
       party: "👍🥳",
-      dogsOrCats: "🐕",
-      beachOrMountain: "🏖️",
+      dogsorcats: "🐕",
+      beachormountain: "🏖️",
     },
-    aboutMe:
+    aboutme:
       " Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis enim quis culpa voluptates, quia voluptatum magnam beatae, repudiandae distinctio voluptatem, hic dolore inventore eaque excepturi corrupti. Quae, architecto nam.",
     hobbies:
       " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, quisquam! ",
-    idealFirstDate:
+    idealfirstdate:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, ex?",
   },
 ];
 
+//@ts-ignore
 export const ContextProvider = ({ children }) => {
   const [people, setPeople] = useState(peopleData);
-  const [logged, setLogged] = useState(true);
+  const [userState, setUserState] = useState<UserInterface | boolean>(true);
 
   //delete last person from people array
-  const deletePerson = () => {
+  const deletePerson = ({}) => {
     const targetIndex = people.length - 1; //index for last element in array
     const filteredPeople = people.filter((_, index) => index !== targetIndex);
     setPeople(filteredPeople);
   };
-
   return (
-    <StateContext.Provider value={{ people, deletePerson, logged, setLogged }}>
+    <StateContext.Provider
+      value={{ people, deletePerson, userState, setUserState }}
+    >
       {children}
     </StateContext.Provider>
   );

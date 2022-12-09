@@ -20,7 +20,7 @@ const DEV_URL = "http://localhost:5000/checkToken";
 
 function App() {
   //
-  const { logged, setLogged } = useStateContext();
+  const { userState, setUserState } = useStateContext();
 
   //verify cookie
   const [cookies, setCookies] = useCookies();
@@ -32,7 +32,7 @@ function App() {
       })
       .then((res) => {
         setCookies["auth"] = res.data.data.token; //update token
-        setLogged(true); //logged
+        setUserState(true); //set this to userdata
       })
       .catch((err) => console.log(err)); //);
   };
@@ -48,7 +48,7 @@ function App() {
             key={route.path}
             path={route.path}
             element={
-              <PublicRoutes logged={logged}>{route.component}</PublicRoutes>
+              <PublicRoutes logged={userState}>{route.component}</PublicRoutes>
             }
           />
         ))}
@@ -59,7 +59,9 @@ function App() {
           <Route
             path={route.path}
             element={
-              <PrivateRoutes logged={logged}>{route.component}</PrivateRoutes>
+              <PrivateRoutes logged={userState}>
+                {route.component}
+              </PrivateRoutes>
             }
             key={route.path}
           />

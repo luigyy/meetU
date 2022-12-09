@@ -138,9 +138,9 @@ const Profile = () => {
               </div>
             </div>
 
-            <div className="h-screen  m-5 mb-20 border-4 border-orange-500 mx-auto">
+            {/* <div className="h-screen  m-5 mb-20 border-4 border-orange-500 mx-auto">
               {" "}
-            </div>
+            </div> */}
           </div>
           <div className="fixed md:h-screen  md:w-[6%] bg-gray-200 md:top-0 md:right-0 blur opacity-80 bottom-0 h-[12vh] p-2 w-full"></div>
           <div className="fixed md:h-screen  md:w-[6%] md:bg-gray-200 md:top-0 md:right-0 bottom-0 h-[12vh] p-2 w-full">

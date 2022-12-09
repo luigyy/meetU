@@ -24,11 +24,11 @@ const SettingsButton = ({ title, customFunc, path }) => {
 };
 //testing only, do not push to main
 const Settings = () => {
-  const { setLogged } = useStateContext();
-  const [cookies, setCookies, removeCookies] = useCookies();
+  const { setUserState } = useStateContext();
+  const [removeCookies] = useCookies();
 
   const handleLogout = () => {
-    setLogged(false);
+    setUserState(false);
     removeCookies("token");
   };
   return (
