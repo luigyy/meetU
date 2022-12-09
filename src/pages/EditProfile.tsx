@@ -5,6 +5,7 @@ import "../Profile.css";
 import Interaction from "../components/Interaction";
 import { useStateContext } from "../contexts/ContextProvider";
 import { useEffect } from "react";
+import ResizableInput from "../components/ResizableInput";
 
 const Profile = () => {
   const { userState } = useStateContext();

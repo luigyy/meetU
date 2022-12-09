@@ -1,0 +1,16 @@
+wrapper > * {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1em;
+}
+
+#hide {
+  position: absolute;
+  opacity: 0;
+  z-index: -100;
+  white-space: pre;
+}
+
+input {
+  min-width: 1px;
+  padding: 0;
+}
