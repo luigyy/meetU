@@ -4,9 +4,15 @@ const { useState, useRef, useEffect } = React;
 
 interface ResizableInputProps {
   value?: string;
+  className?: string;
+  extraWidth: number;
 }
 
-const ResizableInput: React.FC<ResizableInputProps> = ({ value }) => {
+const ResizableInput: React.FC<ResizableInputProps> = ({
+  value,
+  className,
+  extraWidth,
+}) => {
   const [content, setContent] = useState(value || "");
   const [width, setWidth] = useState(0);
   const span = useRef();
@@ -30,10 +36,9 @@ const ResizableInput: React.FC<ResizableInputProps> = ({ value }) => {
       </span>
       <input
         type="text"
-        style={{ width }}
+        className={`mx-2 text-center py-1 ${className}`} //add classname
+        style={{ width: width + extraWidth }}
         value={content}
-        placeholder={value}
-        autoFocus
         onChange={(e) => changeHandler(e)}
       />
       {/* @ts-ignore */}
