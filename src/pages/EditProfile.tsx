@@ -120,7 +120,11 @@ const Profile = () => {
                   <h1 className="py-5 font-semibold text-3xl text-center">
                     Sobre mi
                   </h1>
-                  <p className="leading-7 text-center">{userState.aboutme}</p>
+                  <ResizableInput
+                    className="leading-7 text-center"
+                    value={userState.aboutme}
+                    extraWidth={10}
+                  />
                 </div>
 
                 <div>
@@ -138,7 +142,7 @@ const Profile = () => {
                 <div className="card w-96 bg-base-100 shadow-xl mx-auto">
                   <div className="card-body">
                     <h2 className="card-title"> Hobbies...</h2>
-                    <p>{userState.hobbies}</p>
+                    <ResizableInput value={userState.hobbies} extraWidth={5} />
                   </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl mx-auto m-10 mt-20 ">
@@ -146,7 +150,10 @@ const Profile = () => {
                     <h2 className="card-title">
                       Idea para una primera cita 👀
                     </h2>
-                    <p>{userState.idealfirstdate}</p>
+                    <ResizableInput
+                      value={userState.idealfirstdate}
+                      extraWidth={5}
+                    />
                   </div>
                 </div>
               </div>
