@@ -79,22 +79,22 @@ const Profile = () => {
                     More
                   </h1>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
-                    <DropdownComponent />
-                    <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full">
-                      <span>Buscando:</span>
-                      <span className="">
-                        {userState.cards.lookingfor}{" "}
-                      </span>{" "}
-                    </span>
-                    <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full ">
-                      <span>Preferencia:</span>
-                      <span className="pl-5 ">
-                        {userState.cards.sexualpreference}
-                      </span>
-                    </span>
+                    <DropdownComponent
+                      title="Buscando: "
+                      options={["🔥", "🧑‍🤝‍🧑", "💓"]}
+                    />
+                    <DropdownComponent
+                      title="Preferencia: "
+                      options={["👨", "👩", "👨👩"]}
+                    />
+
                     <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full ">
                       <span>Altura:</span>
-                      <span className="pl-5"> {userState.cards.height}</span>
+                      <ResizableInput
+                        value={userState.cards.height}
+                        extraWidth={0}
+                      />
+                      cm
                     </span>
                     <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full ">
                       <span>Fiesta:</span>

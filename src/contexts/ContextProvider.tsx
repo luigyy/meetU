@@ -67,7 +67,7 @@ const peopleData: UserInterface[] = [
     cards: {
       lookingfor: "🔥",
       sexualpreference: "👩",
-      height: "185cm",
+      height: "185",
       party: "👍🥳",
       dogsorcats: "🐕",
       beachormountain: "🏖️",
