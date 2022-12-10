@@ -96,23 +96,18 @@ const Profile = () => {
                       />
                       cm
                     </span>
-                    <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full ">
-                      <span>Fiesta:</span>
-                      <span className="pl-5"> {userState.cards.party}</span>
-                    </span>
-                    <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full ">
-                      <span>🐕 ó 🐈:</span>
-                      <span className="pl-5">
-                        {" "}
-                        {userState.cards.dogsorcats}
-                      </span>
-                    </span>
-                    <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full  ">
-                      <span>🏖️ ó ⛰️:</span>
-                      <span className="pl-5 ">
-                        {userState.cards.beachormountain}
-                      </span>
-                    </span>
+                    <DropdownComponent
+                      title="Fiesta: "
+                      options={["👎", "👍"]}
+                    />
+                    <DropdownComponent
+                      title="🐕 or 🐈"
+                      options={["🐕", "🐈"]}
+                    />
+                    <DropdownComponent
+                      title="🏖️ or ⛰️"
+                      options={["🏖️", "⛰️"]}
+                    />
                   </div>
                   <span></span>
                 </div>
