@@ -3,13 +3,14 @@ import HeaderWithLogo from "../components/HeaderWithLogo";
 import { Navigate } from "react-router-dom";
 import "../Profile.css";
 import Interaction from "../components/Interaction";
+import { useUserContext } from "../contexts/UserContext";
 import { useStateContext } from "../contexts/ContextProvider";
-import { useEffect } from "react";
 import ResizableInput from "../components/ResizableInput";
 import DropdownComponent from "../components/Dropdown";
 
 const Profile = () => {
   const { userState } = useStateContext();
+  //
   return (
     <div>
       {userState ? (
@@ -120,11 +121,13 @@ const Profile = () => {
                   <h1 className="py-5 font-semibold text-3xl text-center">
                     Sobre mi
                   </h1>
-                  <ResizableInput
-                    className="leading-7 text-center"
-                    value={userState.aboutme}
-                    extraWidth={10}
-                  />
+                  <p className="text-center">
+                    <ResizableInput
+                      className="leading-7 text-center"
+                      value={userState.aboutme}
+                      extraWidth={10}
+                    />
+                  </p>
                 </div>
 
                 <div>
