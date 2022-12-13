@@ -9,11 +9,34 @@ import ResizableInput from "../components/ResizableInput";
 import DropdownComponent from "../components/Dropdown";
 
 const Profile = () => {
-  const { userState } = useUserContext();
+  const {
+    name,
+    setName,
+    img,
+    setImg,
+    age,
+    setAge,
+    slogan,
+    setSlogan,
+    university,
+    setUniversity,
+    major,
+    setMajor,
+    city,
+    setCity,
+    cards,
+    setCards,
+    aboutme,
+    setAboutme,
+    hobbies,
+    setHobbies,
+    idealfirstdate,
+    setIdealFirstDate,
+  } = useUserContext();
   //
   return (
     <div>
-      {userState ? (
+      {name ? (
         <div>
           <div className="md:mr-[6%]">
             <HeaderWithLogo />
@@ -21,24 +44,24 @@ const Profile = () => {
               <div className="w-full md:w-1/2 mt-20 md:mt-0 h-screen ">
                 <img
                   className="w-[50%] mx-auto m-3 rounded-lg"
-                  src={userState.img}
-                  alt={userState.name}
+                  src={img}
+                  alt={name}
                 />
                 <div className="text-center">
                   <ResizableInput
                     extraWidth={80}
-                    value={userState.name}
+                    value={name}
                     className="text-3xl font-semibold tracking-tighter text-center"
                   />
                   <ResizableInput
-                    value={userState.age}
+                    value={age}
                     extraWidth={7}
                     className="text-lg text-gray-700"
                   />
                 </div>
                 <div className="text-center">
                   <ResizableInput
-                    value={userState.slogan}
+                    value={slogan}
                     extraWidth={250}
                     className="p-5 text-4xl text-center mx-auto italic mt-4"
                   />
@@ -47,14 +70,14 @@ const Profile = () => {
 
               <div className="w-full md:w-1/2 h-screen  ">
                 <h1 className="text-center text-3xl my-5">
-                  About <span className="font-semibold">{userState.name}</span>
+                  About <span className="font-semibold">{name}</span>
                 </h1>
                 <div className="pl-10 ">
                   <h1 className="p-2 text-lg">
                     Universidad:{" "}
                     <ResizableInput
                       className="text-base"
-                      value={userState.university}
+                      value={university}
                       extraWidth={10}
                     />
                   </h1>
@@ -62,7 +85,7 @@ const Profile = () => {
                     Carrera:{" "}
                     <ResizableInput
                       className="text-base"
-                      value={userState.major}
+                      value={major}
                       extraWidth={10}
                     />
                   </h1>
@@ -70,7 +93,7 @@ const Profile = () => {
                     De{" "}
                     <ResizableInput
                       className="text-base"
-                      value={userState.city}
+                      value={city}
                       extraWidth={10}
                     />{" "}
                   </h1>
@@ -91,10 +114,7 @@ const Profile = () => {
 
                     <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full ">
                       <span>Altura:</span>
-                      <ResizableInput
-                        value={userState.cards.height}
-                        extraWidth={0}
-                      />
+                      <ResizableInput value={cards?.height} extraWidth={0} />
                       cm
                     </span>
                     <DropdownComponent
@@ -124,7 +144,7 @@ const Profile = () => {
                   <p className="text-center">
                     <ResizableInput
                       className="leading-7 text-center"
-                      value={userState.aboutme}
+                      value={aboutme}
                       extraWidth={10}
                     />
                   </p>
@@ -145,7 +165,7 @@ const Profile = () => {
                 <div className="card w-96 bg-base-100 shadow-xl mx-auto">
                   <div className="card-body">
                     <h2 className="card-title"> Hobbies...</h2>
-                    <ResizableInput value={userState.hobbies} extraWidth={5} />
+                    <ResizableInput value={hobbies} extraWidth={5} />
                   </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl mx-auto m-10 mt-20 ">
@@ -153,10 +173,7 @@ const Profile = () => {
                     <h2 className="card-title">
                       Idea para una primera cita 👀
                     </h2>
-                    <ResizableInput
-                      value={userState.idealfirstdate}
-                      extraWidth={5}
-                    />
+                    <ResizableInput value={idealfirstdate} extraWidth={5} />
                   </div>
                 </div>
               </div>

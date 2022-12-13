@@ -5,8 +5,28 @@ import UserInterface from "../interfaces/UserInterface";
 import { useEffect } from "react";
 
 interface StateProviderInterface {
-  userState?: UserInterface;
-  setUserState?: (user: UserInterface) => void;
+  name?: string;
+  img?: string;
+  age?: string;
+  slogan?: string;
+  university?: string;
+  major?: string;
+  city?: string;
+  cards?: CardsInterface;
+  aboutme?: string;
+  hobbies?: string;
+  idealfirstdate?: string;
+  setName?: (name: string) => void;
+  setImg?: (img: string) => void;
+  setAge?: (age: string) => void;
+  setSlogan?: (slogan: string) => void;
+  setUniversity?: (university: string) => void;
+  setMajor?: (major: string) => void;
+  setCity?: (city: string) => void;
+  setCards?: (cards: CardsInterface) => void;
+  setAboutme?: (aboutme: string) => void;
+  setHobbies?: (hobbies: string) => void;
+  setIdealFirstDate?: (idealFirstDate: string) => void;
 }
 
 const StateContext = createContext<StateProviderInterface>({});
@@ -61,35 +81,35 @@ export const UserContextProvider = ({ children }) => {
   const [cards, setCards] = useState<CardsInterface>({});
   const [aboutme, setAboutme] = useState("");
   const [hobbies, setHobbies] = useState("");
-  const [idealFirstDate, setIdealFirstDate] = useState("");
-  //
-  const userData: UserInterface = {
-    name: name,
-    img: img,
-    age: age,
-    slogan: slogan,
-    university: university,
-    major: major,
-    city: city,
-    cards: {
-      lookingfor: cards.lookingfor,
-      sexualpreference: cards.sexualpreference,
-      height: cards.height,
-      party: cards.party,
-      dogsorcats: cards.dogsorcats,
-      beachormountain: cards.beachormountain,
-    },
-    aboutme: aboutme,
-    hobbies: hobbies,
-    idealfirstdate: idealFirstDate,
-  };
-
-  //
-  const [userState, setUserState] = useState<UserInterface>(userData);
-  //
+  const [idealfirstdate, setIdealFirstDate] = useState("");
 
   return (
-    <StateContext.Provider value={{ userState, setUserState }}>
+    <StateContext.Provider
+      value={{
+        name,
+        setName,
+        img,
+        setImg,
+        age,
+        setAge,
+        slogan,
+        setSlogan,
+        university,
+        setUniversity,
+        major,
+        setMajor,
+        city,
+        setCity,
+        cards,
+        setCards,
+        aboutme,
+        setAboutme,
+        hobbies,
+        setHobbies,
+        idealfirstdate,
+        setIdealFirstDate,
+      }}
+    >
       {children}
     </StateContext.Provider>
   );
