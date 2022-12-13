@@ -1,3 +1,5 @@
+import CardsInterface from "../interfaces/CardsInterface";
+
 interface UserInterface {
   name: string;
   img: string;
@@ -6,14 +8,7 @@ interface UserInterface {
   university: string; //create university type
   major: string;
   city: string;
-  cards: {
-    lookingfor: string;
-    sexualpreference: string;
-    height: string;
-    party: string;
-    dogsorcats: string;
-    beachormountain: string;
-  };
+  cards: CardsInterface;
   aboutme: string;
   hobbies: string;
   idealfirstdate: string;

@@ -9,7 +9,7 @@ import ResizableInput from "../components/ResizableInput";
 import DropdownComponent from "../components/Dropdown";
 
 const Profile = () => {
-  const { userState } = useStateContext();
+  const { userState } = useUserContext();
   //
   return (
     <div>
