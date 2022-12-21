@@ -5,14 +5,20 @@ const { useState, useRef, useEffect } = React;
 interface ResizableInputProps {
   value?: string;
   className?: string;
+  customFunc?: (e: any) => void;
   extraWidth: number;
+  maxWidth?: string;
 }
 
 const ResizableInput: React.FC<ResizableInputProps> = ({
   value,
   className,
   extraWidth,
+  customFunc,
+  maxWidth,
 }) => {
+  //
+
   const [content, setContent] = useState(value || "");
   const [width, setWidth] = useState(0);
   const span = useRef();
@@ -25,6 +31,7 @@ const ResizableInput: React.FC<ResizableInputProps> = ({
   //@ts-ignore
   const changeHandler = (evt) => {
     setContent(evt.target.value);
+    if (customFunc) customFunc(evt.target.value);
   };
 
   return (
@@ -34,10 +41,9 @@ const ResizableInput: React.FC<ResizableInputProps> = ({
       <span id="hide" ref={span}>
         {content}
       </span>
-      <input
-        type="text"
-        className={`mx-2 text-center py-1 ${className}`} //add classname
-        style={{ width: width + extraWidth }}
+      <textarea
+        className={`mx-2 rounded-2xl text-center py-1 ${className}`} //add classname
+        style={{ width: width + extraWidth, maxWidth: maxWidth }}
         value={content}
         onChange={(e) => changeHandler(e)}
       />
