@@ -18,8 +18,7 @@ const ResizableInput: React.FC<ResizableInputProps> = ({
   maxWidth,
 }) => {
   //
-
-  const [content, setContent] = useState(value || "");
+  const [content, setContent] = useState(value || "test");
   const [width, setWidth] = useState(0);
   const span = useRef();
 
