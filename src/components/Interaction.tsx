@@ -5,9 +5,23 @@ import ReactTooltip from "react-tooltip";
 import { CgHome, CgProfile } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
 import { useStateContext } from "../contexts/ContextProvider";
+import { AiOutlineSave } from "react-icons/ai";
 
+interface InteractionButtonProps {
+  title: string;
+  icon?: any;
+  bgOnHover?: boolean;
+  path?: string;
+  customfunc?: () => void;
+}
 //======================
-const InteractionButton = ({ title, icon, bgOnHover, path, customfunc }) => {
+const InteractionButton: React.FC<InteractionButtonProps> = ({
+  title,
+  icon,
+  bgOnHover,
+  path,
+  customfunc,
+}) => {
   //
   const navigate = useNavigate();
 
@@ -34,7 +48,15 @@ const InteractionButton = ({ title, icon, bgOnHover, path, customfunc }) => {
   );
 };
 
-const Interaction = ({ forProfile }) => {
+interface InteractionProps {
+  forProfile?: boolean;
+  forEditProfile?: boolean;
+}
+
+const Interaction: React.FC<InteractionProps> = ({
+  forProfile,
+  forEditProfile,
+}) => {
   const { deletePerson } = useStateContext();
   return (
     <div className="md:h-full w-full">
@@ -48,6 +70,11 @@ const Interaction = ({ forProfile }) => {
             customfunc={deletePerson}
             path="/"
           />
+        </div>
+      ) : forEditProfile ? (
+        <div className="flex md:flex-col justify-around md:h-screen w-full items-center">
+          <InteractionButton title="Home" icon={<CgHome />} path="/" />
+          <InteractionButton title="Save" icon={<AiOutlineSave />} />
         </div>
       ) : (
         <div className="flex justify-around w-full items-center">
