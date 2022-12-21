@@ -1,18 +1,13 @@
 import "./App.css";
 import "./index.css";
-import Main from "./pages/Main";
-import Landing from "./pages/Landing";
-import Settings from "./pages/navbar/Settings";
-import Chats from "./pages/navbar/Chats";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Profile from "./pages/Profile";
 import { protectedRoutes, publicRoutes } from "./routes";
 import PrivateRoutes from "./components/PrivateRoutes";
 import PublicRoutes from "./components/PublicRoutes";
 import NotFound from "./pages/NotFound";
-import { useStateContext } from "./contexts/ContextProvider";
 import { useCookies } from "react-cookie";
 import axios from "axios";
+import { useUserContext } from "./contexts/UserContext";
 
 const DEV_URL = "http://localhost:5000/checkToken";
 
@@ -20,7 +15,7 @@ const DEV_URL = "http://localhost:5000/checkToken";
 
 function App() {
   //
-  const { userState, setUserState } = useStateContext();
+  const { logged, setLogged } = useUserContext();
 
   //verify cookie
   const [cookies, setCookies] = useCookies();
@@ -32,7 +27,7 @@ function App() {
       })
       .then((res) => {
         setCookies["auth"] = res.data.data.token; //update token
-        setUserState(true); //set this to userdata
+        setLogged(true); //set this to userdata
       })
       .catch((err) => console.log(err)); //);
   };
@@ -48,7 +43,7 @@ function App() {
             key={route.path}
             path={route.path}
             element={
-              <PublicRoutes logged={userState}>{route.component}</PublicRoutes>
+              <PublicRoutes logged={logged}>{route.component}</PublicRoutes>
             }
           />
         ))}
@@ -59,9 +54,7 @@ function App() {
           <Route
             path={route.path}
             element={
-              <PrivateRoutes logged={userState}>
-                {route.component}
-              </PrivateRoutes>
+              <PrivateRoutes logged={logged}>{route.component}</PrivateRoutes>
             }
             key={route.path}
           />

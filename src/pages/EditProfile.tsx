@@ -23,10 +23,20 @@ const Profile = () => {
     setUniversity,
     major,
     setMajor,
+    height,
+    setHeight,
+    party,
+    setParty,
+    sexualpreference,
+    setSexualpreference,
+    lookingfor,
+    setLookingfor,
+    dogsorcats,
+    setDogsorcats,
+    beachormountain,
+    setBeachormountain,
     city,
     setCity,
-    cards,
-    setCards,
     aboutme,
     setAboutme,
     hobbies,
@@ -128,10 +138,10 @@ const Profile = () => {
                   <span className="bg-gray-300 px-7 py-1 rounded-3xl flex justify-between items-center opacity-80 w-full ">
                     <span>Altura:</span>
                     <ResizableInput
-                      value={cards?.height}
+                      value={height}
                       extraWidth={0}
                       maxWidth="100px"
-                      customFunc={setCards}
+                      customFunc={setHeight}
                     />
                     cm
                   </span>

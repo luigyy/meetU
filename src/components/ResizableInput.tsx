@@ -3,11 +3,13 @@ import React from "react";
 const { useState, useRef, useEffect } = React;
 
 interface ResizableInputProps {
-  value?: string;
+  value?: string | number;
   className?: string;
   customFunc?: (e: any) => void;
   extraWidth: number;
   maxWidth?: string;
+  forCards?: boolean;
+  cardField?: string;
 }
 
 const ResizableInput: React.FC<ResizableInputProps> = ({
@@ -16,6 +18,8 @@ const ResizableInput: React.FC<ResizableInputProps> = ({
   extraWidth,
   customFunc,
   maxWidth,
+  forCards,
+  cardField,
 }) => {
   //
   const [content, setContent] = useState(value || "test");

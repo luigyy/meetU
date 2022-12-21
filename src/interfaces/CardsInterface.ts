@@ -2,7 +2,7 @@ interface CardsInterface {
   lookingfor?: string;
   sexualpreference?: string;
   height?: string;
-  party?: "Yes" | "No";
+  party?: string;
   dogsorcats?: "Dogs" | "Cats";
   beachormountain?: "Beach" | "Mountain";
 }

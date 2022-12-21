@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { data } from "autoprefixer";
 
 interface StateProviderInterface {
+  logged?: boolean;
   name?: string;
   img?: string;
   age?: string;
@@ -13,10 +14,18 @@ interface StateProviderInterface {
   university?: string;
   major?: string;
   city?: string;
-  cards?: CardsInterface;
+  //cards
+  height?: string;
+  lookingfor?: string;
+  sexualpreference?: string;
+  dogsorcats?: string;
+  beachormountain?: string;
+  party?: string;
+  //cards
   aboutme?: string;
   hobbies?: string;
   idealfirstdate?: string;
+  setLogged?: (logged: boolean) => void;
   setName?: (name: string) => void;
   setImg?: (img: string) => void;
   setAge?: (age: string) => void;
@@ -24,7 +33,14 @@ interface StateProviderInterface {
   setUniversity?: (university: string) => void;
   setMajor?: (major: string) => void;
   setCity?: (city: string) => void;
-  setCards?: (cards: CardsInterface) => void;
+  //cards
+  setHeight?: (height: string) => void;
+  setLookingfor?: (lookingfor: string) => void;
+  setSexualpreference?: (sexualpreference: string) => void;
+  setDogsorcats?: (option: "Dogs" | "Cats") => void;
+  setBeachormountain?: (option: "Beach" | "Mountain") => void;
+  setParty?: (party: string) => void;
+  //cards
   setAboutme?: (aboutme: string) => void;
   setHobbies?: (hobbies: string) => void;
   setIdealFirstDate?: (idealFirstDate: string) => void;
@@ -44,8 +60,8 @@ export const dataFromApi: UserInterface = {
   cards: {
     lookingfor: "🔥",
     sexualpreference: "👩",
-    height: "188cm",
-    party: "Yes",
+    height: "188",
+    party: "yes",
     dogsorcats: "Dogs",
     beachormountain: "Beach",
   },
@@ -56,6 +72,7 @@ export const dataFromApi: UserInterface = {
 
 //@ts-ignore
 export const UserContextProvider = ({ children }) => {
+  const [logged, setLogged] = useState(true);
   //
   const [name, setName] = useState(dataFromApi.name);
   const [img, setImg] = useState(dataFromApi.img);
@@ -64,7 +81,18 @@ export const UserContextProvider = ({ children }) => {
   const [university, setUniversity] = useState(dataFromApi.university);
   const [major, setMajor] = useState(dataFromApi.major);
   const [city, setCity] = useState(dataFromApi.city);
-  const [cards, setCards] = useState<CardsInterface>(dataFromApi.cards);
+  // cards
+  const [height, setHeight] = useState(dataFromApi.cards.height);
+  const [lookingfor, setLookingfor] = useState(dataFromApi.cards.lookingfor);
+  const [sexualpreference, setSexualpreference] = useState(
+    dataFromApi.cards.sexualpreference
+  );
+  const [party, setParty] = useState(dataFromApi.cards.party);
+  const [dogsorcats, setDogsorcats] = useState(dataFromApi.cards.dogsorcats);
+  const [beachormountain, setBeachormountain] = useState(
+    dataFromApi.cards.beachormountain
+  );
+  //cards
   const [aboutme, setAboutme] = useState(dataFromApi.aboutme);
   const [hobbies, setHobbies] = useState(dataFromApi.hobbies);
   const [idealfirstdate, setIdealFirstDate] = useState(
@@ -74,6 +102,8 @@ export const UserContextProvider = ({ children }) => {
   return (
     <StateContext.Provider
       value={{
+        logged,
+        setLogged,
         name,
         setName,
         img,
@@ -86,10 +116,20 @@ export const UserContextProvider = ({ children }) => {
         setUniversity,
         major,
         setMajor,
+        height,
+        setHeight,
+        party,
+        setParty,
+        sexualpreference,
+        setSexualpreference,
+        lookingfor,
+        setLookingfor,
+        dogsorcats,
+        setDogsorcats,
+        beachormountain,
+        setBeachormountain,
         city,
         setCity,
-        cards,
-        setCards,
         aboutme,
         setAboutme,
         hobbies,

@@ -4,6 +4,7 @@ import HeaderForNavbarButtons from "../../components/HeaderForNavbarButtons";
 import { useStateContext } from "../../contexts/ContextProvider";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../../contexts/UserContext";
 
 const SettingsButton = ({ title, customFunc, path }) => {
   const navigate = useNavigate();
@@ -24,11 +25,11 @@ const SettingsButton = ({ title, customFunc, path }) => {
 };
 //testing only, do not push to main
 const Settings = () => {
-  const { setUserState } = useStateContext();
+  const { setLogged } = useUserContext();
   const [removeCookies] = useCookies();
 
   const handleLogout = () => {
-    setUserState(false);
+    setLogged(false);
     removeCookies("token");
   };
   return (

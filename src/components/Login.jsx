@@ -4,6 +4,7 @@ import handleLogin from "../authentication/handleLogin";
 import { useStateContext } from "../contexts/ContextProvider";
 import "../index.css";
 import { useCookies } from "react-cookie";
+import { useUserContext } from "../contexts/UserContext";
 
 //TODO: change setLogged to contain user information
 
@@ -28,7 +29,7 @@ const ErrorMessage = ({ error }) => {
 const Login = () => {
   const [cookies, setCookies] = useCookies();
 
-  const { setLogged } = useStateContext();
+  const { setLogged } = useUserContext();
   //login
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
