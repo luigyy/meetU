@@ -45,7 +45,7 @@ const ResizableInput: React.FC<ResizableInputProps> = ({
         {content}
       </span>
       <textarea
-        className={`mx-2 rounded-2xl text-center py-1 ${className}`} //add classname
+        className={`mx-2 inline-block rounded-2xl text-center py-1 ${className}`} //add classname
         style={{ width: width + extraWidth, maxWidth: maxWidth }}
         value={content}
         onChange={(e) => changeHandler(e)}

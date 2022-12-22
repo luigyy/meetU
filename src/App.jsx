@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { useUserContext } from "./contexts/UserContext";
+import UserChat from "./pages/UserChat";
 
 const DEV_URL = "http://localhost:5000/checkToken";
 
@@ -59,6 +60,15 @@ function App() {
             key={route.path}
           />
         ))}
+
+        <Route
+          path="/chats/:id"
+          element={
+            <PrivateRoutes logged={logged}>
+              <UserChat />
+            </PrivateRoutes>
+          }
+        ></Route>
         {/**protected routes */}
 
         {/* not found handler */}

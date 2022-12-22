@@ -11,7 +11,7 @@ const StateContext = createContext<StateProviderInterface>({});
 //get this from server
 const peopleData: UserInterface[] = [
   {
-    name: "jon snow",
+    name: "jon",
     img: "https://upload.wikimedia.org/wikipedia/en/3/30/jon_snow_season_8.png",
     age: "25",
     slogan: "i still dont know nothing",

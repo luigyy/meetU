@@ -34,7 +34,7 @@ const Settings = () => {
   };
   return (
     <div>
-      <HeaderForNavbarButtons title="Settings" />
+      <HeaderForNavbarButtons title="Settings" path="/" />
       <SettingsButton title="Edit Profile" path="/editProfile" />
       <SettingsButton title="Log out" customFunc={handleLogout} />
     </div>
