@@ -15,8 +15,9 @@ const UserChat: React.FC<UserChatProps> = ({}) => {
     { sender: "jon", text: "hello you" },
     {
       sender: "me",
-      text: " Lorem ipsum dolor sit amet consectetur adipisiLorem ipsum dolor sit amet consectetur adipisiLorem ipsum dolor sit amet consectetur adipisiLorem ipsum dolor sit amet consectetur adipisiLorem ipsum dolor sit amet consectetur adipisiLorem ipsum dolor sit amet consectetur adipisiLorem ipsum dolor sit amet consectetur adipisiLorem ipsum dolor sit amet consectetur adipisiLorem ipsum dolor sit amet consectetur adipisiLorem ipsum dolor sit amet consectetur adipisicing elit. Aut eveniet cum nihil voluptatibus aspernatur ad sunt impedit expedita perspiciatis reprehenderit?",
+      text: "Hello jon",
     },
+    { sender: "jon", text: "hello you" },
   ];
   return (
     <div className="overflow-hidden">
