@@ -4,7 +4,6 @@ import { Navigate } from "react-router-dom";
 import "../Profile.css";
 import Interaction from "../components/Interaction";
 import { useStateContext } from "../contexts/ContextProvider";
-import { useEffect } from "react";
 
 const Profile = () => {
   // get person data

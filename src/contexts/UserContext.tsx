@@ -1,9 +1,5 @@
 import React, { useContext, createContext, useState } from "react";
-import { parseIsolatedEntityName } from "typescript";
-import CardsInterface from "../interfaces/CardsInterface";
 import UserInterface from "../interfaces/UserInterface";
-import { useEffect } from "react";
-import { data } from "autoprefixer";
 
 interface StateProviderInterface {
   logged?: boolean;
@@ -72,7 +68,7 @@ export const dataFromApi: UserInterface = {
 
 //@ts-ignore
 export const UserContextProvider = ({ children }) => {
-  const [logged, setLogged] = useState(true);
+  const [logged, setLogged] = useState(false);
   //
   const [name, setName] = useState(dataFromApi.name);
   const [img, setImg] = useState(dataFromApi.img);

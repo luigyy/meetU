@@ -1,7 +1,6 @@
 import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import HeaderForNavbarButtons from "../../components/HeaderForNavbarButtons";
-import { useStateContext } from "../../contexts/ContextProvider";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../contexts/UserContext";

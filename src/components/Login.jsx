@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import handleLogin from "../authentication/handleLogin";
-import { useStateContext } from "../contexts/ContextProvider";
 import "../index.css";
 import { useCookies } from "react-cookie";
 import { useUserContext } from "../contexts/UserContext";
@@ -27,7 +26,7 @@ const ErrorMessage = ({ error }) => {
 };
 
 const Login = () => {
-  const [cookies, setCookies] = useCookies();
+  const [, setCookies] = useCookies();
 
   const { setLogged } = useUserContext();
   //login
@@ -119,12 +118,9 @@ const Login = () => {
             >
               Iniciar sesión
             </button>
-            <a
-              className="inline-block transition-color duration-500 align-baseline font-bold text-sm text-blue-400 hover:text-blue-500"
-              href="#"
-            >
+            <button className="inline-block transition-color duration-500 align-baseline font-bold text-sm text-blue-400 hover:text-blue-500">
               Forgot Password?
-            </a>
+            </button>
           </div>
           {/**error message */}
           <div>{error ? <ErrorMessage error={error} /> : ""}</div>

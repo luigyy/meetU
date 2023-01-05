@@ -66,7 +66,7 @@ const Register = () => {
     }
 
     try {
-      const response = await handleRegister(name, lastname, email, password);
+      await handleRegister(name, lastname, email, password);
 
       //clear fields
       setName("");
@@ -143,12 +143,9 @@ const Register = () => {
           >
             Registrarse
           </button>
-          <a
-            className="inline-block transition-color duration-500 align-baseline font-bold text-sm text-blue-400 hover:text-blue-500"
-            href="#"
-          >
+          <button className="inline-block transition-color duration-500 align-baseline font-bold text-sm text-blue-400 hover:text-blue-500">
             Forgot Password?
-          </a>
+          </button>
         </div>
         {/**error message */}
         <div>{error ? <ErrorMessage error={error} /> : ""}</div>

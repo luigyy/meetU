@@ -1,20 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import HeaderWithLogo from "../components/HeaderWithLogo";
-import { Navigate } from "react-router-dom";
 import "../Profile.css";
 import Interaction from "../components/Interaction";
 import { useUserContext } from "../contexts/UserContext";
-import { useStateContext } from "../contexts/ContextProvider";
 import ResizableInput from "../components/ResizableInput";
 import DropdownComponent from "../components/Dropdown";
-import { dataFromApi } from "../contexts/UserContext";
 
 const Profile = () => {
   const {
     name,
     setName,
     img,
-    setImg,
+    // setImg,
     age,
     setAge,
     slogan,
@@ -25,16 +22,16 @@ const Profile = () => {
     setMajor,
     height,
     setHeight,
-    party,
-    setParty,
-    sexualpreference,
-    setSexualpreference,
-    lookingfor,
-    setLookingfor,
-    dogsorcats,
-    setDogsorcats,
-    beachormountain,
-    setBeachormountain,
+    // party,
+    // setParty,
+    // sexualpreference,
+    // setSexualpreference,
+    // lookingfor,
+    // setLookingfor,
+    // dogsorcats,
+    // setDogsorcats,
+    // beachormountain,
+    // setBeachormountain,
     city,
     setCity,
     aboutme,

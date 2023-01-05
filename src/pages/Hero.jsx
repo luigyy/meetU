@@ -3,20 +3,23 @@ import { useState, useEffect } from "react";
 import Register from "../components/Register";
 import Login from "../components/Login";
 import "../Hero.css";
+import { useUserContext } from "../contexts/UserContext";
 
 const Hero = () => {
   //states to toggle between login and register forms
   const [registerState, setRegisterState] = useState(false);
   const [loginState, setLoginState] = useState(false);
+  const { setLogged } = useUserContext();
 
   //toggle between login and register forms
   useEffect(() => {
     setLoginState(registerState ? false : loginState);
-  }, [registerState]);
-
-  useEffect(() => {
     setRegisterState(loginState ? false : registerState);
-  }, [loginState]);
+  }, [registerState, loginState]);
+
+  // useEffect(() => {
+  //   setRegisterState(loginState ? false : registerState);
+  // }, [loginState, registerState]);
 
   const buttonStyle =
     "font-semibold  p-3 px-4 rounded-3xl hover:bg-[rgb(0,0,0,.5)]";
@@ -31,6 +34,14 @@ const Hero = () => {
           >
             {" "}
             Registrarse{" "}
+          </button>
+          <button
+            onClick={(e) => setLogged(true)}
+            className={buttonStyle}
+            href=""
+          >
+            {" "}
+            Iniciar como invitado{" "}
           </button>
           <button
             onClick={(e) => setLoginState(!loginState)}

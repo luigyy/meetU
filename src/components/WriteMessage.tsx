@@ -3,7 +3,7 @@ import { AiOutlineSend } from "react-icons/ai";
 
 interface WriteMessageProps {}
 
-const WriteMessage: React.FC<WriteMessageProps> = ({}) => {
+const WriteMessage: React.FC<WriteMessageProps> = () => {
   return (
     <div className="">
       <div className="relative border-4 border-gray-300 focus:border-green-300 py-2 px-5 rounded-3xl w-[70%] mx-auto">

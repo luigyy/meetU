@@ -5,7 +5,7 @@ import WriteMessage from "../components/WriteMessage";
 
 interface UserChatProps {}
 
-const UserChat: React.FC<UserChatProps> = ({}) => {
+const UserChat: React.FC<UserChatProps> = () => {
   const { id } = useParams();
   //   const { people } = useStateContext();
   //   const person = people!.filter((item) => item.name === id);

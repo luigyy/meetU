@@ -6,7 +6,7 @@ import NopeopleHandler from "../components/NopeopleHandler";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Main = () => {
-  const { people, deletePerson } = useStateContext();
+  const { people } = useStateContext();
   return (
     <div>
       <Navbar />
