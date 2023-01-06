@@ -68,7 +68,7 @@ export const dataFromApi: UserInterface = {
 
 //@ts-ignore
 export const UserContextProvider = ({ children }) => {
-  const [logged, setLogged] = useState(false);
+  const [logged, setLogged] = useState(true);
   //
   const [name, setName] = useState(dataFromApi.name);
   const [img, setImg] = useState(dataFromApi.img);
